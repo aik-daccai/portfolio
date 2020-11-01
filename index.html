@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>aik | ポートフォリオ</title>
+<meta name="keywords" content="aik,ポートフォリオ,portfolio">
+<meta name="description" content="aikのポートフォリオサイト。デザインを行う際に心がけていることをまとめてみた。【Works：制作実績】ではこれまでの携わったサービスの一部を紹介。">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<link href="css/reset.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+<link href="css/common.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="js/background-blur.min.js"></script>
+<script>window.Promise || document.write('<script src="//www.promisejs.org/polyfills/promise-7.0.4.min.js"><\/script>');</script>
+<script src="js/common.js"></script>
+</head>
+<body>
+<div class="loader">
+	<p class="loader__item"></p>
+</div>
+<div class="wrapper">
+<input id="navToggle" type="checkbox">
+<header class="header">
+	<div class="header__inner">
+		<div class="header__content">
+			<div class="header__logo">
+				<a href="#" class="header__logo-item"><img src="images/logo_aik.png" alt="aik"></a>
+			</div>
+			<div class="nav">
+				<ul class="nav__content">
+					<li class="nav__item">
+						<a href="#value" class="nav__link">
+							<div class="nav__inner" data-nav="Value">
+								<span class="nav__title">デザイン思考</span>
+							</div>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="#process" class="nav__link">
+							<div class="nav__inner" data-nav="Process">
+								<span class="nav__title">制作フロー</span>
+							</div>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="#works" class="nav__link">
+							<div class="nav__inner" data-nav="Works">
+								<span class="nav__title">実績</span>
+							</div>
+						</a>
+					</li>
+					<!--<li class="nav__item">
+							<a href="#" class="nav__link">
+								<div class="nav__inner" data-nav="Profile">
+									<span class="nav__title">自己紹介</span>
+								</div>
+							</a>
+						</li>-->
+				</ul>
+				<label for="navToggle" class="nav__toggle">メニューを閉じる</label>
+			</div>
+			<label data-label="MENU" for="navToggle" class="header__toggle">メニューを開く</label>
+		</div>
+	</div>
+</header>
+<main class="main-contents">
+	<div class="hero">
+		<div class="hero__inner">
+			<img src="images/img_hero.gif" class="hero__img" alt="aik's portfolio">
+			<h1 class="hero__catch">aik's portfolio</h1>
+		</div>
+	</div>
+	<p class="top-scroll">Scroll Down</p>
+	<section id="value" class="section">
+		<div class="section__inner">
+			<span data-label="Value" class="section__label">デザイン思考</span>
+			<h2 class="section__titile">伝えたいことを<br> <span class="primary-text">補助</span>するデザイン</h2>
+			<p class="section__description">問題解決するアイディアを創出することがデザインの使命であり、<br> それを達成するに当たって制作時に心がけていること</p>
+			<div class="section__card">
+				<div class="section__group">
+					<div class="section__keyword primary-text">
+						Vision
+					</div>
+					<div class="section__item">
+						<p class="message">伝わりやすい = 心にささるデザインへ</p>
+						<p class="text">分かりやすくなることで、ユーザーの印象に残るデザインになる</p>
+					</div>
+				</div>
+				<div class="section__group">
+					<p data-keyword="Imagine" class="section__item message">連想しやすくなるように<br><span class="primary-text">『補助』</span>する</p>
+					<figure class="section__figure section__figure_mockup">
+						<img src="images/img_Imagine.svg" alt="現在地に特化したスポットコンテンツ">
+					</figure>
+					<p class="section__item text">スポット＝「現在地」に特化したルームということが連想しやすいように、画像を”マップアイコン”で切り出すオンラインを示すアイコンは緑or青の共通認識の色を用いる</p>
+				</div>
+				<div class="section__group">
+					<p data-keyword="Optimal" class="section__item message">伝えたいことを<span class="primary-text">『補助』するのであって、</span><br>邪魔してはいけない</p>
+					<figure class="section__figure section__figure_mockup">
+						<img src="images/img_optimal.svg" alt="サービスの成長に合わせたコンテンツ配置">
+					</figure>
+					<p class="section__item text">伝えたいこと以外を気にされないようにする<br> （認知負荷を下げる）<br>新着はあまりユーザーが集まっていないので、ネガティブになり得る情報は与えない</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="process" class="section">
+		<div class="section__inner">
+			<span data-label="Process" class="section__label">制作フロー</span>
+			<h2 class="section__titile">世界観からの、<br> <span class="primary-text">逆算</span></h2>
+			<p class="section__description">制作フローではデザインプロセスが<br> 目的→戦略→戦術になるよう設計<br> デザインは目的を達成するための戦術の1つ</p>
+		</div>
+		<div class="section__card section__card_liquid">
+		<dl class="scene">
+			<dt class="scene__dt" data-label="Case">制作フロー例</dt>
+			<dd class="scene__dd">ソーシャルアプリケーション</dd>
+		</dl>
+		<ol class="process slider">
+			<li class="process__list message" data-keyword="Vision / Gole">
+				サービス自体の<br> <span class="strong-text">目的(世界観)</span>を明確にする
+				<p class="text">自粛している人との交流を思いっきり満喫して、共感し合える場所を提供する</p>
+				<dl class="box process__box">
+					<dt class="box__title">こころのゆとり</dt>
+					<dd class="box__tip">付加価値</dd>
+					<dd class="box__text">多くの人と語り、共感して物理的な距離を超えて繋がることで、心に余裕が生まれ、不安な気持ちを和らげる場所</dd>
+				</dl>
+			</li>
+			<li class="process__list message" data-keyword="Structure">
+				目的を果たせる<span class="strong-text">必要条件</span>を定め、<br> 落とし込む
+				<p class="text">たくさんの出会いと共感ができるように、<br> “ソーシャル疲れ”しないリラックスした雰囲気づくり</p>
+				<dl class="terms">
+					<div class="terms__group">
+						<dt class="terms__dt" data-label="color"><img src="images/img_color.svg" alt="色彩"></dt>
+						<dd class="terms__dd">癒やし(緑)、清潔感(青)の２色をブレンドした色を数値調整</dd>
+					</div>
+					<div class="terms__group">
+						<dt class="terms__dt" data-label="Content"><img src="images/img_content.svg" alt="コンテンツ"></dt>
+						<dd class="terms__dd">全体的なコンテンツの間隔や配置の設定に余裕(ゆとり)を持たせる</dd>
+					</div>
+					<div class="terms__group">
+						<dt class="terms__dt" data-label="Ornament"><img src="images/img_ornament.svg" alt="装飾"></dt>
+						<dd class="terms__dd">テキストのあしらいや、コンテンツ全体の角丸を選択</dd>
+					</div>
+				</dl>
+			</li>
+			<li class="process__list message" data-keyword="Gimmick">
+				興味を抱く<span class="strong-text">瞬間</span>をつくる
+				<p class="text">レイアウトにメリハリを持たせて、情報をキャッチしやすく</p>
+				<div class="mockup">
+					<div class="mockup__inner">
+						<figure class="mockup__figure">
+							<img src="images/img_gimmick.jpg" class="mockup__img" alt="ソーシャルサービスのメインコンテンツ">
+						</figure>
+					</div>
+				</div>
+			</li>
+		</ol>
+		</div>
+	</section>
+	<section id="works" class="section">
+		<h2 class="section__wrapper"> <span data-label="Works" class="section__label">制作実績</span> </h2>
+		<section class="section__content">
+			<div class="section__inner">
+				<div class="section__item">
+					<h3 class="section__titile"><img src="images/img_fanmily.svg" class="section__img" alt="fanmilyサービス"></h3>
+					<p class="section__description">プラットフォーム型ファンクラブアプリ</p>
+				</div>
+				<figure class="section__figure section__figure_main">
+					<img src="images/img_mypage.svg" alt="fanmilyサービス | マイページ">
+				</figure>
+				<dl class="section__item work">
+					<div class="work__group">
+						<dt class="work__dt">主な機能</dt>
+						<dd class="work__dd">限定メッセージ配信 / デジタル会員証の発行 / 本人ライブ配信 / スクラッチくじ</dd>
+					</div>
+					<div class="work__group">
+						<dt class="work__dt">制作期間</dt>
+						<dd class="work__dd">2019年6月~現在 *アップデート機能追加中</dd>
+					</div>
+					<div class="work__group">
+						<dt class="work__dt">制作体制 </dt>
+						<dd class="work__dd">HTML/CSS コーダー：3名、 バックエンドエンジニア：3名、 iOS/アンドロイドエンジニア：4名</dd>
+					</div>
+					<div class="work__group">
+						<dt class="work__dt">使用ツール</dt>
+						<dd class="work__dd">Adobe Aftereffect / Adobe XD / Dreamweaver / Illustrator / Github / S3</dd>
+					</div>
+				</dl>
+			</div>
+			<div class="section__container">
+				<div class="section__inner">
+					<div class="section__group">
+						<dl class="work section__work">
+							<div class="work__group">
+								<dt class="work__dt">担当領域</dt>
+								<dd class="work__dd">サービスロゴ / アプリアイコンの制作<br> デジタル会員証のデザイン<br> スクラッチコンテンツの設計 / デザイン / コーディング<br> Lottieアニメーションの制作 / Webページへの実装 </dd>
+							</div>
+						</dl>
+					</div>
+					<div class="section__group">
+						<div class="section__item">
+							<div data-keyword="LOGO" class="message">
+								<img src="images/img_logoidea.png" alt="FanClub + Communication" class="section__img">
+							</div>
+							<p class="text">ロゴタイプの作成では、サービス全体の世界観であるスタイリッシュさを追求して２種類の筆記体を採用<br> 特にFとi はこだわって細部まで調整した</p>
+						</div>
+						<figure class="section__figure">
+							<img src="images/img_symbolmark.svg" alt="サービスの成長に合わせたコンテンツ配置">
+						</figure>
+						<dl class="work section__item">
+							<div class="work__group">
+								<dt class="work__dt">制作期間</dt>
+								<dd class="work__dd">2週間(シンボルタイプ) 、1週間(ロゴタイプ)</dd>
+							</div>
+							<div class="work__group">
+								<dt class="work__dt">使用ツール</dt>
+								<dd class="work__dd">Illustrator / フィボナッチ数列</dd>
+							</div>
+						</dl>
+					</div>
+					<div class="sitemap">
+						<a href="https://fanmily.jp/" target="_blank" class="sitemap__url sitemap__url_fanmily">Fanmily</a> <img src="images/qr_fanmily.png" class="sitemap__qr" alt="Fanmily QRcode">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section__content">
+			<div class="section__inner">
+				<div class="section__item">
+					<h3 class="section__titile"><img src="images/img_chekicha.svg" class="section__img" alt="チェキチャ！サービス"></h3>
+					<p class="section__description">タレントとファンが1対1で、遠く離れていても特典会ができるライブ配信アプリ</p>
+				</div>
+				<figure class="section__figure section__figure_main">
+					<img src="images/img_cekicha.svg" alt="チェキチャ！サービス | マイページ">
+				</figure>
+				<dl class="section__item work">
+					<div class="work__group">
+						<dt class="work__dt">制作期間</dt>
+						<dd class="work__dd">[ Ver.1.0 ] 2018年6~3月</dd>
+					</div>
+					<div class="work__group">
+						<dt class="work__dt">制作体制 </dt>
+						<dd class="work__dd">HTML/CSS コーダー：2名、　バックエンドエンジニア：1名、　iOS/アンドロイドエンジニア：4名</dd>
+					</div>
+					<div class="work__group">
+						<dt class="work__dt">使用ツール</dt>
+						<dd class="work__dd">Adobe XD / Photoshop / Illustrator / Dreamweaver / Github / S3</dd>
+					</div>
+				</dl>
+			</div>
+			<div class="section__container">
+				<div class="section__inner">
+					<div class="section__group">
+						<dl class="work section__work">
+							<div class="work__group">
+								<dt class="work__dt">担当領域</dt>
+								<dd class="work__dd">マイページ (設定系ページ含む）のデザイン / コーディング<br> プレミアム会員系ページ のデザイン / コーディング<br> アイコンの制作<br> アプリストアのスクリーンショットの制作 </dd>
+							</div>
+						</dl>
+					</div>
+					<div class="section__group">
+						<div data-keyword="アイコン" class="section__item message">
+						</div>
+						<figure class="section__figure">
+							<img src="images/img_live.svg" alt="シグナルの役割を持つアイコンが使用されるライブ画面">
+						</figure>
+						<p class="section__item text">アイコンはサービス内のビジュアルに適応するよう可愛らしさを出し、サービスのコンセプトを曖昧にしないよう注意した<br> アイコンは文字よりも理解を早めることができる利点はあるが、あくまでもイラストではなく、シグナルである認識を忘れずユーザーを的確にナビゲートできるよう作成</p>
+					</div>
+					<div class="sitemap">
+						<a href="https://ckc.utaten.com/" target="_blank" class="sitemap__url sitemap__url_chekicha">チェキチャ！</a> <img src="images/qr_chekicha.png" class="sitemap__qr" alt="チェキチャ！ QRcode">
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+</main>
+<footer class="footer">
+	<div class="footer__inner">
+		<ul class="footer-nav">
+			<li class="footer-nav__item">
+				<a href="#">プライバシーポリシー</a>
+			</li>
+			<li class="footer-nav__item">
+				<a href="#">サイトマップ</a>
+			</li>
+		</ul>
+		<p class="footer__copy"><small>©2020 aik.</small></p>
+	</div>
+</footer>
+</div>
+</body>
+</html>
