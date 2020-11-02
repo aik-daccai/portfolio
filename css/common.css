@@ -350,6 +350,7 @@ body {
 		width: 200px;
 		opacity: .5;
 		animation: none;
+		transform: none;
 	}
 	
 	.nav__title {
@@ -357,6 +358,17 @@ body {
 		margin-bottom: 16px;
 		font-size: 18px;
 		animation: none;
+		transform: none;
+	}
+
+	.nav__link:hover .nav__inner::before {
+		animation: none;
+		transform: none;
+	}
+
+	.nav__link:hover .nav__title {
+		animation: none;
+		transform: none;
 	}
 	
 	#navToggle:checked ~ .header .nav {
@@ -473,7 +485,7 @@ body {
 	background: #F3EDE7;
 }
 
-.section:nth-of-type(2) {
+/*.section:nth-of-type(2) {
 	background: none;
 	-webkit-backdrop-filter: blur(15px);
 	backdrop-filter: blur(15px);
@@ -487,7 +499,7 @@ _:-ms-lang(x)::-ms-backdrop, .section:nth-of-type(2) {
 	.section:nth-of-type(2) {
 		background: #FFF;
 	}
-}
+}*/
 
 .section::before,
 .section__container::before {
@@ -800,6 +812,16 @@ _:-ms-lang(x)::-ms-backdrop, .section:nth-of-type(2) {
 
 .mockup__img {
 	width: calc(100% - 17px);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .mockup__img {
+	width: 100%;
+}
+
+@-moz-document url-prefix() {
+	.mockup__img {
+		width: 100%;
+	}
 }
 
 /********scene********/
@@ -1129,7 +1151,6 @@ _:-ms-lang(x)::-ms-backdrop, .section:nth-of-type(2) {
 	.section__card_liquid::before {
 		box-shadow: -4px -4px 8px rgb(232, 225, 218, .5);
 	}
-
 	
 	.section__group {
 		position: relative;
@@ -1198,10 +1219,6 @@ _:-ms-lang(x)::-ms-backdrop, .section:nth-of-type(2) {
 	
 	.section__work {
 		margin-top: 8px;
-	}
-	
-	br {
-		display: none;
 	}
 }
 

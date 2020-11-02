@@ -54,7 +54,17 @@ $(function () {
 	});
 	
 	//Blur
-	$('#process').backgroundBlur({
+	/*$('#process').backgroundBlur({
 		blurAmount : 30,
+	});*/
+	
+	//close nav
+	$('.nav__link').on('click', function () {
+		var prop = $('#navToggle').prop('checked');
+		if (prop) {
+			setTimeout(function () {
+				$('#navToggle').prop('checked', false);
+			}, 150);
+		}
 	});
 });
