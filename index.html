@@ -63,7 +63,9 @@
 				</ul>
 				<label for="navToggle" class="nav__toggle">メニューを閉じる</label>
 			</div>
-			<label data-label="MENU" for="navToggle" class="header__toggle">メニューを開く</label>
+			<div class="header__toggle">
+				<label for="navToggle" data-label="MENU">メニューを開く</label>
+			</div>
 		</div>
 	</div>
 </header>
@@ -78,8 +80,8 @@
 	<section id="value" class="section">
 		<div class="section__inner">
 			<span data-label="Value" class="section__label">デザイン思考</span>
-			<h2 class="section__titile">伝えたいことを<br> <span class="primary-text">補助</span>するデザイン</h2>
-			<p class="section__description">問題解決するアイディアを創出することがデザインの使命であり、<br> それを達成するに当たって制作時に心がけていること</p>
+			<h2 class="section__titile">伝えたいことを<br><span class="primary-text">補助</span>するデザイン</h2>
+			<p class="section__description">問題解決するアイディアを創出することがデザインの使命であり、<br class="sp-hidden">それを達成するに当たって制作時に心がけていること</p>
 			<div class="section__card">
 				<div class="section__group">
 					<div class="section__keyword primary-text">
@@ -98,7 +100,7 @@
 					<p class="section__item text">スポット＝「現在地」に特化したルームということが連想しやすいように、画像を”マップアイコン”で切り出すオンラインを示すアイコンは緑or青の共通認識の色を用いる</p>
 				</div>
 				<div class="section__group">
-					<p data-keyword="Optimal" class="section__item message">伝えたいことを<span class="primary-text">『補助』するのであって、</span><br>邪魔してはいけない</p>
+					<p data-keyword="Optimal" class="section__item message">伝えたいことを<span class="primary-text">『補助』</span>するのであって、<br class="sp-hidden">邪魔してはいけない</p>
 					<figure class="section__figure section__figure_mockup">
 						<img src="images/img_optimal.svg" alt="サービスの成長に合わせたコンテンツ配置">
 					</figure>
@@ -110,8 +112,8 @@
 	<section id="process" class="section">
 		<div class="section__inner">
 			<span data-label="Process" class="section__label">制作フロー</span>
-			<h2 class="section__titile">世界観からの、<br> <span class="primary-text">逆算</span></h2>
-			<p class="section__description">制作フローではデザインプロセスが<br> 目的→戦略→戦術になるよう設計<br> デザインは目的を達成するための戦術の1つ</p>
+			<h2 class="section__titile">世界観からの、<br><span class="primary-text">逆算</span></h2>
+			<p class="section__description">制作フローではデザインプロセスが<br>目的→戦略→戦術になるよう設計<br>デザインは目的を達成するための戦術の1つ</p>
 		</div>
 		<div class="section__card section__card_liquid">
 		<dl class="scene">
@@ -124,16 +126,16 @@
 				<p class="text">自粛している人との交流を思いっきり満喫して、共感し合える場所を提供する</p>
 				<dl class="box process__box">
 					<dt class="box__title">こころのゆとり</dt>
-					<dd class="box__tip">付加価値</dd>
+					<dd class="box__tip"><img src="images/img_tip.svg" alt="付加価値"></dd>
 					<dd class="box__text">多くの人と語り、共感して物理的な距離を超えて繋がることで、心に余裕が生まれ、不安な気持ちを和らげる場所</dd>
 				</dl>
 			</li>
 			<li class="process__list message" data-keyword="Structure">
-				目的を果たせる<span class="strong-text">必要条件</span>を定め、<br> 落とし込む
-				<p class="text">たくさんの出会いと共感ができるように、<br> “ソーシャル疲れ”しないリラックスした雰囲気づくり</p>
+				目的を果たせる<span class="strong-text">必要条件</span>を定め、<br>落とし込む
+				<p class="text">たくさんの出会いと共感ができるように、<br>“ソーシャル疲れ”しないリラックスした雰囲気づくり</p>
 				<dl class="terms">
 					<div class="terms__group">
-						<dt class="terms__dt" data-label="color"><img src="images/img_color.svg" alt="色彩"></dt>
+						<dt class="terms__dt" data-label="Color"><img src="images/img_color.svg" alt="色彩"></dt>
 						<dd class="terms__dd">癒やし(緑)、清潔感(青)の２色をブレンドした色を数値調整</dd>
 					</div>
 					<div class="terms__group">
@@ -168,7 +170,7 @@
 					<h3 class="section__titile"><img src="images/img_fanmily.svg" class="section__img" alt="fanmilyサービス"></h3>
 					<p class="section__description">プラットフォーム型ファンクラブアプリ</p>
 				</div>
-				<figure class="section__figure section__figure_main">
+				<figure class="section__figure">
 					<img src="images/img_mypage.svg" alt="fanmilyサービス | マイページ">
 				</figure>
 				<dl class="section__item work">
@@ -233,7 +235,7 @@
 					<h3 class="section__titile"><img src="images/img_chekicha.svg" class="section__img" alt="チェキチャ！サービス"></h3>
 					<p class="section__description">タレントとファンが1対1で、遠く離れていても特典会ができるライブ配信アプリ</p>
 				</div>
-				<figure class="section__figure section__figure_main">
+				<figure class="section__figure section__figure_thin">
 					<img src="images/img_cekicha.svg" alt="チェキチャ！サービス | マイページ">
 				</figure>
 				<dl class="section__item work">
