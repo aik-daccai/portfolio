@@ -1244,8 +1244,8 @@ _:-ms-lang(x)::-ms-backdrop, .mockup__img {
 		margin-top: 0;
 	}
 	
-	.message[data-keyword],
-	.message[data-keyword]::before {
+	.message[data-keyword="アイコン"],
+	.message[data-keyword="アイコン"]::before {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
