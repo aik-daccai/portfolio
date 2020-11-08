@@ -11,23 +11,21 @@
 		}
 	});
 }
-
-//ホームの共通読み込み  sort
-function includeSort(){
-	$.ajax({
-		url: '/portfolio/sort.html',
-		cache: false,
-		async: false,
-		dataType: 'html',
-		success: function(html){
-			document.write(html);
-		}
-	});
-}
 */
 
 //nav
 $(function () {
+	//current
+	$('.submenu__link').each(function () {
+		var $href = $(this).attr('href');
+		if (location.href.match($href)) {
+			$(this).parent('.submenu__item').addClass('submenu__item_active').parents('.global-nav__item').addClass('global-nav__item_active').children('.global-nav__input').prop('checked', true);
+		} else {
+			$(this).parent('.submenu__item').removeClass('submenu__item_active');
+		}
+	});
+
+	//accordion
 	$('.global-nav__link').on("click", function () {
 		var prop = $('#navToggle').prop('checked');
 		if (prop) {
@@ -36,10 +34,7 @@ $(function () {
 			}, 150);
 		}
 	});
-});
 
-//nav
-$(function () {
 	//collapsed
 	$('#nav-ctrl').on('click', function () {
 		var page = $('.page-wrapper');
@@ -120,27 +115,8 @@ $(function () {
 		bodyHidden();
 	});
 
-	$('#delete').click(function () {
-		$('#layer, #deleteModal').fadeIn();
-		bodyHidden();
-	});
-
-	$('#restore').click(function () {
-		$('#layer, #restoreModal').fadeIn();
-		bodyHidden();
-	});
-
-	$('#approval').click(function () {
-		$('#layer, #approvalModal').fadeIn();
-		bodyHidden();
-	});
 	$('#closed').click(function () {
 		$('#layer, #closedModal').fadeIn();
-		bodyHidden();
-	});
-
-	$('#release').click(function () {
-		$('#layer, #releaseModal').fadeIn();
 		bodyHidden();
 	});
 
@@ -150,13 +126,7 @@ $(function () {
 			overflow: 'auto'
 		});
 	});
-
-	$('button[type=submit]').click(function () {
-		$('body,html').css({
-			overflow: 'auto'
-		});
-	});
-
+	
 	$('#logout').click(function () {
 		$('#logoutModal').fadeIn().css({
 			'z-index': '9'
@@ -165,7 +135,6 @@ $(function () {
 			'z-index': '9',
 			'background-color': 'rgba(0,0,0,.4)'
 		});
-
 		bodyHidden();
 	});
 
@@ -674,72 +643,6 @@ $(function () {
 	});
 });
 */
-//file
-(function ($) {
-	$(function () {
-		var init = function () {
-			var $fileList = $('#fileList');
-			$fileList.on('click.deleteFile', '.file__delete', function (evt) {
-					var $li = $(this).closest('.file__item');
-					if ($fileList.find('.file__item').length > 1) {
-						$li.remove();
-					}
-					return false;
-				})
-				.on('change.inputFile', '.file__input', function (evt) {
-					var $input = $(this),
-						$li = $input.closest('.file__item'),
-						$newLi;
-
-					if (evt.target.files.length) {
-						$newLi = $li.clone();
-						$newLi.find('.file__input').val(null);
-						$fileList.prepend($newLi);
-
-						$.each(evt.target.files, function (i, elm) {
-							var file = this,
-								fileName = file.name,
-								reader;
-
-							reader = new FileReader();
-							reader.readAsDataURL(file);
-
-
-							reader.onloadend = function (evt) {
-								var fileReader = this;
-								if (fileReader.result) {
-									var thumb = '<div class="file__name">' + fileName + '</div><button class="file__delete">削除</button>';
-									$li.append(thumb).css({
-										padding: "0 0 0 12px"
-									});
-								}
-								return this;
-							};
-						});
-						$input.hide();
-						$('.file__add:not(:first)').hide();
-					} else {
-
-						$li.find('.file__delete').trigger('click');
-					}
-					return this;
-				});
-		};
-		init();
-	});
-})(jQuery);
-
-
-//clearBtn
-$(function () {
-	$('#clearBtn').click(function () {
-		var formParent = $(this).parents('form');
-		formParent.find('.file__input, .form__textarea').val('');
-		if ($('.file__item').length > 1) {
-			$('.file__item:not(:first)').remove();
-		}
-	});
-});
 
 //media-category
 $(function () {
@@ -763,7 +666,7 @@ $(function () {
 });
 
 
-//chebge fanclub-popup
+//chenge fanclub-popup
 $(function () {
 	var fanclub = $('.channel-popup__box').attr('name');
 	var client = $('.popup-box__input:checked').attr('id');
@@ -943,24 +846,6 @@ $(function () {
 				marginRight: ''
 			});
 			$('.edit__btn_sort').show();
-		}
-	});
-
-	//current nav
-	$('.filter-search__list .list__link').each(function () {
-		var $href = $(this).attr('href');
-		if (location.href.match($href)) {
-			$(this).parent('.list__item').addClass('filter-search__active');
-		} else {
-			$(this).parent('.list__item').removeClass('filter-search__active');
-		}
-	});
-	$('.filter-search__list-item').each(function () {
-		var $href = $(this).attr('href');
-		if (location.href.match($href)) {
-			$(this).addClass('filter-search__active');
-		} else {
-			$(this).removeClass('filter-search__active');
 		}
 	});
 });
