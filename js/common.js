@@ -1,4 +1,14 @@
 // JavaScript Document
+//IE対応
+$(function () {
+	//objectFit
+	objectFitImages();
+	//:root
+	cssVars({
+		rootElement: document
+	});
+});
+
 //page Loading
 $(window).on('load', function () {
 	function _first() {
@@ -32,9 +42,7 @@ $(function () {
 		}, speed, 'swing');
 		return false;
 	});
-});
 
-$(function () {
 	//slick
 	$('.slider').slick({
 		dots: true,
