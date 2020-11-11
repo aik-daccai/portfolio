@@ -115,8 +115,10 @@ input, select, button {
 
 button, input, select, textarea {
 	font-family: inherit;
+	background: transparent;
 	font-size: 100%;
 	outline: none;
+	color: #343434;
 }
 
 select::-ms-expand {
