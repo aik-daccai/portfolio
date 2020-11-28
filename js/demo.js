@@ -102,6 +102,57 @@ $(function () {
 });
 
 
+//validation
+$(function () {
+	var info = document.getElementById('info');
+	if (info != null) {
+		info.addEventListener('change', infoValidat);
+	}
+	infoValidat();
+	
+	//validation
+	function infoValidat() {
+		var flag = false;
+		var error = $('.form__error');
+
+		if (!($('[name=service_name]').val())) {
+			flag = true;
+		} else if (!($('[name=service_domain]').val())) {
+			flag = true;
+		}
+		if (flag) {
+			$('.form__submit-btn').prop('disabled', true).css('background', '#ccc');
+			return false;
+		} else {
+			$('.form__submit-btn').prop('disabled', false).css('background', '');
+		}
+	}
+	
+	//submit demo
+	$('#saveModal .primary-btn').click(function () {
+		$.when(
+			$('#layer, #saveModal').fadeOut(),
+			$('body,html').css({overflow: 'auto'})
+		)
+		.then(function () {
+			_showAlert('保存しました')
+		});
+	});
+
+});
+
+//フォーム送信後の完了メッセージ
+function _showAlert(msg) {
+	var $alert = $('<div>').prependTo($('.main-content')).addClass('alert');
+	//e.preventDefault();
+	$alert.css('display', 'none').text(msg).fadeIn('slow', function () {
+		setTimeout(function () {
+			$alert.fadeOut('slow')
+		}, 1000);
+	});
+}
+
+
 //modal
 $(function () {
 	function bodyHidden() {
@@ -126,7 +177,7 @@ $(function () {
 			overflow: 'auto'
 		});
 	});
-	
+
 	$('#logout').click(function () {
 		$('#logoutModal').fadeIn().css({
 			'z-index': '9'
@@ -147,16 +198,6 @@ $(function () {
 	});
 });
 
-//フォーム送信後の完了メッセージ
-function _showAlert(msg) {
-	var $alert = $('<div>').prependTo($('.main-content')).addClass('alert');
-	//e.preventDefault();
-	$alert.css('display', 'none').text(msg).fadeIn('slow', function () {
-		setTimeout(function () {
-			$alert.fadeOut('slow')
-		}, 1000);
-	});
-}
 
 //tab-position
 $(function () {
@@ -351,260 +392,7 @@ $(function () {
 			$sp.removeClass('unavailable');
 		}
 	});
-
-	//validation
-	var scratch = document.getElementById('scratch');
-	scratchValidat();
-	if (scratch != null) {
-		scratch.addEventListener('change', scratchValidat);
-		scratch.addEventListener('input', scratchValidat);
-		scratch.addEventListener('click', scratchValidat);
-	}
-
-	function scratchValidat() {
-		var flag = false;
-		var prop3 = $('#third .flag').prop('checked');
-		var prop4 = $('#fourth .flag').prop('checked');
-		var src = $('#coverImage').prop("src");
-
-		if (!($('[name=scratch_title]').val())) {
-			flag = true;
-		} else if (!($('[name=start_time]').val())) {
-			flag = true;
-		} else if (!($('[name=end_time]').val())) {
-			flag = true;
-		} else if (!($('[name=display_start_time]').val())) {
-			flag = true;
-		} else if (!($('[name=price]').val())) {
-			flag = true;
-		} else if (!($('[name=first_title]').val())) {
-			flag = true;
-		} else if (!($('[name=first_rate]').val())) {
-			flag = true;
-		} else if (!($('[name=second_title]').val())) {
-			flag = true;
-		} else if (!($('[name=second_rate]').val())) {
-			flag = true;
-		}
-		if (src == 'https://resource.fanmily.jp/admin/images/img_noitem.jpg') {
-			if (!($('[name=cover_image]').val())) {
-				flag = true;
-			}
-		}
-		if (prop3) {
-			if (!($('[name=third_title]').val())) {
-				flag = true;
-			} else if (!($('[name=third_rate]').val())) {
-				flag = true;
-			}
-		}
-		if (prop4) {
-			if (!($('[name=fourth_title]').val())) {
-				flag = true;
-			} else if (!($('[name=fourth_rate]').val())) {
-				flag = true;
-			}
-		}
-		if (flag) {
-			$('.scratch__submit-btn').prop('disabled', true).css('background', '#ccc');
-			return false;
-		} else {
-			$('.scratch__submit-btn').prop('disabled', false).css('background', '');
-		}
-	}
 });
-
-//景品の追加
-$(function () {
-	var ct = 0;
-	$('.grade__prize').each(function () {
-		var $1st = $('#grade\\[' + ct + '\\]');
-		var lastBlock = $('.grade__prize:last');
-		var $count = $('.grade__prize').length;
-		$1st.find('.grade__prize-add').hide();
-
-		if (ct == 0) {
-			$1st.find('.grade__prize-delete').hide();
-		}
-		if (ct > 0) {
-			$1st.find('.grade__prize-delete').show();
-		}
-		ct++;
-		if ($count > 9) {
-			$('.grade__prize-add').hide();
-		} else {
-			lastBlock.find('.grade__prize-add').show();
-		}
-	});
-
-	//add
-	$('.grade__prize-add').click(function () {
-		var $1stParent = $(this).parent(),
-			$1st = $('#grade\\[' + ct + '\\]'),
-			$count = $('.grade__prize').length,
-			$thumb = $(this).parent('.grade__prize').find('.thumb').length,
-			$uploaded = $(this).parent('.grade__prize').find('.uploaded').length,
-			video = $(this).parents('.grade__prize').find('.video__name').length,
-			bg = $(this).parents('.grade__prize').find('.form__file-bg').length,
-			txta = $(this).parents('.grade__prize').find('textarea').length,
-			deleteCheck = $(this).parents('.grade__prize').find('.grade__img .media-list__checkbox').length,
-			$loading = $(this).parents('.grade__prize').find('.video').length,
-			/*      ↓ 追記コード ↓      */
-			clonecode = $('.grade__prize:last').clone(true),
-			cloneno = clonecode.attr('data-formno'),
-			cloneno2 = parseInt(cloneno) + 1,
-			cloneno3 = parseInt(cloneno) + 2;
-		/*        ↑ ここまで ↑      */
-
-		$('.grade__prize').find('.grade__prize-add').hide();
-
-		if (ct > 0) {
-			$1st.find('.grade__prize-delete').show();
-		}
-		if (ct < 1) {
-			ct++;
-		}
-		if (ct == 0) {
-			ct++;
-		}
-		ct = $('.grade__prize').length;
-
-		$1stParent.clone(true)
-		/*      ↓ 追記コード ↓      */
-		clonecode.attr('data-formno', cloneno2);
-		clonecode.find('.grade__prize-num').html(cloneno3)
-		clonecode.insertAfter($('.grade__prize:last'))
-			/*        ↑ ここまで ↑      */
-			.attr('id', 'grade[' + ct + ']')
-			.find('.grade__prize-add, .grade__prize-delete').show()
-			.end()
-			.find('div, input, button, textarea, select').each(function (idx, obj) {
-				$(this).parents('.grade__prize').find('select.prize-type').val('0');
-				if ($(obj).attr('id')) {
-					$(obj).attr({
-						id: $(obj).attr('id').replace(/\[[0-9]\]+$/, '[' + ct + ']')
-					});
-				}
-				if ($(obj).attr('name')) {
-					$(obj).attr({
-						name: $(obj).attr('name').replace(/\[[0-9]\]+$/, '[' + ct + ']')
-					});
-				}
-				if ($(obj).attr('type') == 'hidden') {
-					$(obj).val('');
-				}
-				if ($(obj).attr('type') == 'text') {
-					$(obj).val('');
-				}
-				if ($(obj).attr('type') == 'file') {
-					$(obj).val('');
-				}
-				if ($(obj).attr('type') == 'number') {
-					$(obj).val('');
-				}
-				if ($(obj).attr('class') == 'uploaded') {
-					$(obj).val('');
-				}
-				if (txta == 1) {
-					$(this).parent('.grade__prize').find('textarea').val('');
-				}
-				if ($uploaded == 1) {
-					$(this).parent('.grade__prize').find('.uploaded').attr('src', 'https://resource.fanmily.jp/admin/images/img_noitem.jpg').show();
-				}
-				if ($loading == 1) {
-					$(this).parents('.grade__prize').find('.scratch__img-inner').removeClass('video').removeClass('video_loading');
-				}
-				if ($thumb == 1) {
-					$(this).parent('.grade__prize').find('.thumb').remove();
-				}
-				if (video == 1) {
-					$(this).parent('.grade__prize').find(".video__name").empty();
-				}
-				if (video == 1) {
-					$(this).parent('.grade__prize').find(".media-list__edit").remove();
-				}
-				if (video == 1) {
-					$(this).parent('.grade__prize').find(".media-list__pre-btn").remove();
-				}
-				if ($count >= 9) {
-					$('.grade__prize-add').hide();
-				}
-			})
-			.find('div').each(function () {
-				if (bg == 0) {
-					$(this).parents('.grade__prize').find('input[type=file]').after('<span class="form__file-bg">クリックで<br>メディアを追加</span>');
-				}
-				if (deleteCheck > 0) {
-					$(this).parents('.grade__prize').find('.media-list__btn').show();
-					$(this).parents('.grade__prize').find('.media-list__checkbox').remove();
-					$(this).parents('.grade__prize').find('.grade__img').removeClass('close');
-				}
-				$(this).parents('.grade__prize').find('.clear-button').css({
-					display: ''
-				});
-				return false;
-			}).parents('.grade__prize').find('.prize-download').hide().children('.checkbox__input').prop('checked', false);
-		ct++;
-	});
-	//delete
-	$('.grade__prize-delete').click(function () {
-		/*      ↓ 追記コード ↓      */
-		$(this).parents(".grade__prize").remove();
-		var scount = 0;
-		$('.grade__prize').each(function () {
-			var scount2 = scount + 1;
-			$(this).attr('data-formno', scount);
-			$('.grade__prize-num', this).html(scount2);
-			scount += 1;
-		});
-		/*        ↑ ここまで ↑      */
-		var removeObj = $(this).parent();
-		removeObj.fadeOut('fast', function () {
-
-			removeObj.remove();
-			ct = 0;
-
-			$("[id^='grade']").each(function (index, formObj) {
-				if ($(formObj).attr('id') != 'grade[0]') {
-					ct++;
-					$(formObj).attr('id', 'grade[' + ct + ']')
-						.find('div, input, button, textarea, select').each(function (idx, obj) {
-							if ($(obj).attr('id')) {
-								$(obj).attr({
-									id: $(obj).attr('id').replace(/\[[0-9]\]+$/, '[' + ct + ']')
-								});
-							}
-							if ($(obj).attr('name')) {
-								$(obj).attr({
-									name: $(obj).attr('name').replace(/\[[0-9]\]+$/, '[' + ct + ']')
-								});
-							}
-						});
-				}
-			});
-			var lastBlock = $('#grade\\[' + ct + '\\]');
-			lastBlock.find('.grade__prize-add').show();
-		});
-	});
-});
-
-
-//景品種類
-$(function () {
-	$(".prize-type").change(function () {
-		var prizeType = $(this).val();
-		if (prizeType == "0") {
-			$(this).parents('.form__field-inner').find('.prize-download').hide().children('.checkbox__input').prop('checked', false);
-		}
-		if (prizeType == "1") {
-			$(this).parents('.form__field-inner').find('.prize-download').show();
-		}
-		if (prizeType == "2") {
-			$(this).parents('.form__field-inner').find('.prize-download').hide().children('.checkbox__input').prop('checked', false);
-		}
-	});
-});
-
 
 /*//Change layout-img
 $(function () {
@@ -643,27 +431,6 @@ $(function () {
 	});
 });
 */
-
-//media-category
-$(function () {
-	function category() {
-		var category_val = $('.media-category select').val();
-		//var isAnnounce = $('.media-category__announce');
-		if (category_val == '0') {
-			$('#imgCategory').show();
-			$('#videoCategory').hide();
-			//isAnnounce.text('画像が複数枚ある場合は、スライド表示されます');
-		} else if (category_val == '1') {
-			$('#imgCategory').hide();
-			$('#videoCategory').show();
-			//isAnnounce.text('動画がリピート再生されます');
-		}
-	}
-	category();
-	$('.media-category select').change(function () {
-		category();
-	});
-});
 
 
 //chenge fanclub-popup
@@ -731,9 +498,7 @@ $(function () {
 		//↓編集押したときのコメント付きの表示とアイテム無効の表示
 		if ($('#sort').prop('checked')) {
 			$('.list__link').css('pointer-events', 'auto');
-			$('.edit__btn_run').css({
-				display: 'inline-block'
-			});
+			$('.edit__btn_run').css({display: 'inline-block'});
 			$('.edit__btn_sort').html('キャンセル').css({
 				background: '#777',
 				color: '#FFF'
@@ -748,27 +513,20 @@ $(function () {
 				axis: "y",
 				revert: true,
 			});
-			$('.edit__sort-discription').css({
-				display: 'block'
-			});
-			$('.filter-search__close').css({
-				display: 'none'
-			});
-			$('.filter-search__edit').css({
-				marginRight: '-8px'
-			});
+			$('.edit__sort-discription').css({display: 'block'});
+			$('.filter-search__close').css({display: 'none'});
+			$('.filter-search__edit').css({marginRight: '-8px'});
 			$('.edit__btn_display').hide();
-			$('.list-toggle').css({
-				display: 'none'
-			});
+			$('.list-toggle').css({display: 'none'});
+			$('head').append('<style>.displaying::after { right: 56px; } </style>');
 		} else {
 			$('.edit__btn_run').css({
 				display: ''
 			});
 			$('.edit__btn_sort').html('並び替え').css({
-				background: '',
-				color: ''
-			});
+					background: '',
+					color: ''
+				});
 			$('.filter-search__list .list-move').toggleClass('list-move_show');
 			$('.list__link').css({
 				pointerEvents: '',
@@ -777,17 +535,12 @@ $(function () {
 			$('#sortFilterList').sortable({
 				disabled: true,
 			});
-			$('#sortFilterList').sortable("option", "revert", false);
-			$('.edit__sort-discription').css({
-				display: ''
-			});
-			$('.filter-search__close').css({
-				display: ''
-			});
-			$('.filter-search__edit').css({
-				marginRight: ''
-			});
+			$('#sortFilterList').sortable( "option", "revert", false );
+			$('.edit__sort-discription').css({display: ''});
+			$('.filter-search__close').css({display: ''});
+			$('.filter-search__edit').css({marginRight: ''});
 			$('.edit__btn_display').show();
+			$('head').find('style').remove();
 		}
 	});
 	$('#display').change(function () {
@@ -805,30 +558,23 @@ $(function () {
 				pointerEvents: 'none',
 				paddingRight: '48px'
 			});
-			$('.filter-search__close').css({
-				display: 'none'
-			});
+			$('.filter-search__close').css({display: 'none'});
 			$('.list-toggle').css({
 				right: '16px'
 			});
-			$('.edit__display-discription').css({
-				display: 'block'
-			});
-			$('.filter-search__edit').css({
-				marginRight: '-8px'
-			});
+			$('.edit__display-discription').css({display: 'block'});
+			$('.filter-search__edit').css({marginRight: '-8px'});
 			$('.edit__btn_sort').hide();
-			$('.list-toggle').css({
-				display: 'block'
-			});
+			$('.list-toggle').css({display: 'block'});
+			$('head').append('<style>.displaying::after { opacity: 0; } </style>');
 		} else {
 			$('.edit__btn_run').css({
 				display: ''
 			});
 			$('.edit__btn_display').html('有効化の編集').css({
-				background: '',
-				color: ''
-			});
+					background: '',
+					color: ''
+				});
 			$('.list__link').css({
 				pointerEvents: '',
 				paddingRight: ''
@@ -836,16 +582,46 @@ $(function () {
 			$('.list-toggle').css({
 				right: ''
 			});
-			$('.edit__display-discription').css({
-				display: ''
-			});
-			$('.filter-search__close').css({
-				display: ''
-			});
-			$('.filter-search__edit').css({
-				marginRight: ''
-			});
+			$('.edit__display-discription').css({display: ''});
+			$('.filter-search__close').css({display: ''});
+			$('.filter-search__edit').css({marginRight: ''});
 			$('.edit__btn_sort').show();
+			$('head').find('style').remove();
 		}
 	});
+	//display mode
+	$('.list_sort .list__item').each(function () {
+		var displayToggle = $(this).find('.toggle__switch');
+		if (displayToggle.prop('checked')) {
+			$(this).toggleClass('displaying');
+		}
+		
+	});
+	$('.list_sort .list__item').change(function () {
+		var displayToggle = $(this).find('.toggle__switch');
+		if (displayToggle.prop('checked')) {
+			$(this).toggleClass('displaying');
+		} else {
+			$(this).removeClass('displaying');
+		}
+	});
+	
+	$('.edit__btn_run').click(function () {
+		_showAlert('実行しました');
+		setTimeout(function () {
+			location.reload();
+		}, 1000);
+	});
+});
+
+//viewerの高さ計算
+$(window).on('load resize', function () {
+	var windowWidth = window.innerWidth;
+	var windowHeight = window.innerHeight;
+	//	console.log(windowHeight);
+	if (windowWidth < 768) {
+		$('.viewer__inner').css('height', windowHeight + 'px');
+	} else {
+		$('.viewer__inner').css('height', '100%');
+	}
 });

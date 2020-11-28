@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/x-icon" href="../favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicons/favicon-192x192.png">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="https://vjs.zencdn.net/7.0/video-js.min.css">
+<link rel="stylesheet" href="../css/font.css">
+<link rel="stylesheet" href="../css/demo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://vjs.zencdn.net/7.0/video.min.js"></script>
+<script src="../js/demo/videojs-contrib-hls.min.js"></script>
+<script src="../js/demo/videojs-contrib-media-sources.min.js"></script>
+<script src="../js/demo.js"></script>
+</head>
+<body class="viewer">
+<form>
+	<div class="viewer__wrapper">
+		<input id="barTrigger" type="checkbox">
+		<header class="tool-bar viewer__header">
+			<h2 class="tool-bar__title viewer__title">サービス名が表示されます</h2>
+			<button type="button" onclick="window.open('','_self').close();" value="閉じる" class="tool-bar__btn close-btn"></button>
+		</header>
+		<main class="main main_viewer">
+			<!--↓添付画像の場合↓-->
+			<!--<div class="viewer__inner">
+				<label class="open" for="barTrigger">
+					<img src="../images/portrait.jpg" alt="" class="viewer__img">
+				</label>
+			</div>-->
+			<!--↓添付動画の場合↓-->
+			<div class="viewer__inner">
+				<label class="viewer__open" for="barTrigger"></label>
+				<div class="viewer-video__item">
+					<video id="test" class="video-js vjs-default-skin vjs-default-skin vjs-big-play-centered" preload="auto" data-setup="{}" controls="true">
+						<source src="../images/video_test.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</main>
+		<footer class="viewer__footer">
+			<button type="button" class="delete" id="delete">メディアを削除</button>
+		</footer>
+		<label class="viewer__header_close" for="barTrigger"></label>
+	</div>
+	<div id="layer"></div>
+	<div class="modal" id="deleteModal">
+		<div class="modal__inner">
+			<p class="modal__announce">メディアを削除します。<br>よろしいですか？</p>
+			<p class="modal__announce_sub-txt">ファンが持っているメディアも削除されます。</p>
+			<div class="modal__btn-wrapper">
+				<div class="modal__ask-btn">
+					<button class="cancel primary-btn primary-btn--gray">キャンセル</button>
+				</div>
+				<div class="modal__ask-btn">
+					<button type="submit" class="primary-btn">削除する</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="restoreModal">
+		<div class="modal__inner">
+			<p class="modal__announce">メディアを復元します。<br>よろしいですか？</p>
+			<div class="modal__btn-wrapper">
+				<div class="modal__ask-btn">
+					<button class="cancel primary-btn primary-btn--gray">キャンセル</button>
+				</div>
+				<div class="modal__ask-btn">
+					<button type="submit" class="primary-btn">復元する</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<script>
+//modal内のsubmitボタンをタップして処理完了後に表示させてください。文言変更が必要な際はmsgを変更してください。
+$(function () {
+	_showAlert('実行しました');
+});
+</script>
+</body>
+</html>
