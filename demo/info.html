@@ -1,4 +1,4 @@
-@<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -111,12 +111,12 @@
 						<a href="info.html" class="submenu__link">基本情報</a>
 					</li>
 					<li class="submenu__item">
-						<a href="Theme.html" class="submenu__link">テーマ</a>
+						<a href="theme.html" class="submenu__link">テーマ</a>
 					</li>
 				</ul>
 			</li>
 			<li class="global-nav__item" id="logout">
-				<a href="index.html" class="global-nav__label global-nav__label_logout"><span class="global-nav__text">ログアウト</span></a>
+				<span type="button" class="global-nav__label global-nav__label_logout"><span class="global-nav__text">ログアウト</span></span>
 			</li>
 		</ul>
 		<button class="global-nav__ctrl" id="nav-ctrl" aria-label="ナビゲーショバーを展開/折りたたむ"> <span class="global-nav__ctrl-icon">ナビゲーションを切り替える</span> </button>
@@ -126,7 +126,7 @@
 	<main class="main-content">
 		<div class="tool-bar">
 			<h2 class="tool-bar__title">基本情報</h2>
-			<label for="filterToggle" class="filterSide-toggle">フィルタを表示</label>
+			<label for="filterToggle" class="filterSide-toggle">メニューを表示</label>
 		</div>
 		<form class="filter-search filter-search_side">
 			<label for="filterToggle" class="filter-search__close" aria-label="閉じる"></label>
@@ -198,8 +198,8 @@
 								<!--常に空のinputを1つ表示させてください-->
 								<div id="block[0]" class="parent keyword__item">
 									<input type="text" class="input-default" placeholder="キーワードを入力" value="テスト">
-									<button type="button" class="add keyword__add" style="display: none;">キーワード追加</button>
-									<button type="button" class="remove keyword__remove" style="display: none;">削除</button>
+									<button type="button" class="add keyword__add">キーワード追加</button>
+									<button type="button" class="remove keyword__remove">削除</button>
 								</div>
 								<div id="block[1]" class="parent keyword__item">
 									<input type="text" class="input-default" placeholder="キーワードを入力">
@@ -300,7 +300,7 @@
 					<button type="button" class="cancel primary-btn primary-btn--gray">キャンセル</button>
 				</div>
 				<div class="modal__ask-btn">
-					<button type="submit" class="primary-btn">ログアウト</button>
+					<a href="../index.html" class="primary-btn">ログアウト</a>
 				</div>
 			</div>
 		</div>

@@ -150,3 +150,39 @@ input::-ms-clear {
 input:invalid {
 	box-shadow: none;
 }
+
+:placeholder-shown {
+	color: #D3D3D3;
+	font-size: 13px;
+}
+
+/* Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+	color: #D3D3D3;
+	font-size: 13px;
+
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+	color: #D3D3D3;
+	font-size: 13px;
+	opacity: 1;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+	color: #D3D3D3;
+	font-size: 13px;
+	opacity: 1;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+	color: #D3D3D3; 
+	font-size: 13px;
+}
+/*Chromeでinputがオートフィルされてると背景色が黄色になるのを回避*/
+input:-webkit-autofill {
+	box-shadow: 0 0 0px 1000px transparent inset;
+}

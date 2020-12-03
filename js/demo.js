@@ -40,13 +40,10 @@ $(function () {
 		var page = $('.page-wrapper');
 		if (page.hasClass("collapsed")) {
 			page.removeClass("collapsed");
-			//$('.top-logo__img').attr('src', 'https://resource.fanmily.jp/admin/images/logo_admin.png');
 		} else {
 			page.addClass("collapsed");
 			$('.global-nav__input').prop('checked', false);
-			//$('.channel-sidebar_on').removeClass('channel-sidebar_on');
 			$('.channel_active').removeClass('channel_active');
-			//$('.top-logo__img').attr('src', 'images/icon_app.png');
 			$('#logoutLayer').fadeOut();
 		}
 	});
@@ -54,7 +51,6 @@ $(function () {
 		var page = $('.page-wrapper');
 		if (page.hasClass("collapsed")) {
 			page.removeClass("collapsed");
-			//$('.top-logo__img').attr('src', 'https://resource.fanmily.jp/admin/images/logo_admin.png');
 		}
 	});
 
@@ -109,7 +105,7 @@ $(function () {
 		info.addEventListener('change', infoValidat);
 	}
 	infoValidat();
-	
+
 	//validation
 	function infoValidat() {
 		var flag = false;
@@ -127,16 +123,18 @@ $(function () {
 			$('.form__submit-btn').prop('disabled', false).css('background', '');
 		}
 	}
-	
+
 	//submit demo
 	$('#saveModal .primary-btn').click(function () {
 		$.when(
-			$('#layer, #saveModal').fadeOut(),
-			$('body,html').css({overflow: 'auto'})
-		)
-		.then(function () {
-			_showAlert('保存しました')
-		});
+				$('#layer, #saveModal').fadeOut(),
+				$('body,html').css({
+					overflow: 'auto'
+				})
+			)
+			.then(function () {
+				_showAlert('保存しました')
+			});
 	});
 
 });
@@ -230,83 +228,77 @@ $(function () {
 $(function () {
 	//Read color
 	//Primary
-	$('.primary').css('color', $('#Primary').val());
+	$('.primary-text').css('color', $('#Primary').val());
 	$('.bg_primary').css('background-color', $('#Primary').val());
-	//Head Line
-	$('.headline').css('color', $('#HeadLine').val());
+	//border
+	$('.section__group').css('border-color', $('#Border').val());
 	//Accent
-	$('.accent').css('color', $('#Accent').val());
+	$('.section__label').css('color', $('#Accent').val());
 	//Text
-	$('.text').css('color', $('#Text').val());
+	$('.section__inner').css('color', $('#Text').val());
 	//Sub Text
-	$('.sub_text').css('color', $('#SubText').val());
-	//Content
-	$('.contents').css('background-color', $('#Content').val());
+	$('.text').css('color', $('#SubText').val());
+	//Background
+	$('.section__inner').css('background-color', $('#Background').val());
 	//Gradient
 	var startClr = $('#GradientStart').val();
 	var endClr = $('#GradientEnd').val();
-	$('.gradient').css({
+	$('.section__card').css({
 		"background": "linear-gradient(90deg, " + startClr + " 0%, " + endClr + " 100%)"
 	});
-	//Navigation-bar
-	$('.navigation_bar').css('background-color', $('#Navigation-bar').val());
-	//Navigation-Tint
-	$('.navigation_tint').css('color', $('#Navigation-Tint').val());
-	//Primary
-	$('.tab_bar').css('background-color', $('#Tab-Bar').val());
-	//Background
-	$('.background').css('background-color', $('#Background').val());
+	//shadow
+	var shadowClr = $('#Shadow').val();
+	$('.section__card').css({
+		"box-shadow": "9px 9px 16px " + shadowClr
+	});
 
 	//Change color
 	//Primary
 	$('#Primary').change(function () {
-		$('.primary').css('color', $('#Primary').val());
+		$('.primary-text').css('color', $('#Primary').val());
 		$('.bg_primary').css('background-color', $('#Primary').val());
-	});
-	//Head Line
-	$('#HeadLine').change(function () {
-		$('.headline').css('color', $('#HeadLine').val());
 	});
 	//Accent
 	$('#Accent').change(function () {
-		$('.accent').css('color', $('#Accent').val());
+		$('.section__label').css('color', $('#Accent').val());
 	});
 	//Text
 	$('#Text').change(function () {
-		$('.text').css('color', $('#Text').val());
+		$('.section__inner').css('color', $('#Text').val());
 	});
 	//Sub Text
 	$('#SubText').change(function () {
 		$('.sub_text').css('color', $('#SubText').val());
 	});
 	//Content
-	$('#Content').change(function () {
-		$('.contents').css('background-color', $('#Content').val());
+	$('#Border').change(function () {
+		$('.section__group').css('border-color', $('#Border').val());
+	});
+	//Background
+	$('#Background').change(function () {
+		$('.section__inner').css('background-color', $('#Background').val());
 	});
 	//Gradient
 	$('#GradientStart, #GradientEnd').change(function () {
 		var startClr = $('#GradientStart').val();
 		var endClr = $('#GradientEnd').val();
-		$('.gradient').css({
+		$('.section__card').css({
 			"background": "linear-gradient(90deg, " + startClr + " 0%, " + endClr + " 100%)"
 		});
 	});
-	//Navigation-bar
-	$('#Navigation-bar').change(function () {
-		$('.navigation_bar').css('background-color', $('#Navigation-bar').val());
+	//Shadow
+	$('#Shadow').change(function () {
+		var shadowClr = $('#Shadow').val();
+		$('.section__card').css({
+			"box-shadow": "9px 9px 16px " + shadowClr
+		});
 	});
-	//Navigation-Tint
-	$('#Navigation-Tint').change(function () {
-		$('.navigation_tint').css('color', $('#Navigation-Tint').val());
+	//hight-light
+	$('#HightLight').change(function () {
+		var hightLightClr = $('#HightLight').val();
+		$('head').append('<style>.section__card::before { box-shadow: -6px -6px 16px ' + hightLightClr + ';} </style>');
 	});
-	//Primary
-	$('#Tab-Bar').change(function () {
-		$('.tab_bar').css('background-color', $('#Tab-Bar').val());
-	});
-	//Background
-	$('#Background').change(function () {
-		$('.background').css('background-color', $('#Background').val());
-	});
+	
 });
 
 
@@ -493,12 +485,96 @@ $(function () {
 
 //sortInclude
 $(function () {
-	//edit
+	//apply-mode
+	$('#apply').change(function () {
+		//↓編集押したときのコメント付きの表示とアイテム無効の表示
+		if ($('#apply').prop('checked')) {
+			$('.edit__btn_run').css({
+				display: 'inline-block'
+			});
+			$('.edit__btn_sort').html('キャンセル').css({
+				background: '#777',
+				color: '#FFF'
+			});
+			$('.edit__sort-discription').css({
+				display: 'block'
+			});
+			$('.filter-search__close').css({
+				display: 'none'
+			});
+			$('.filter-search__edit').css({
+				marginRight: '-8px'
+			});
+			$('.edit__btn_display').hide();
+		} else {
+			$('.edit__btn_run').css({
+				display: ''
+			});
+			$('.edit__btn_sort').html('カスタマイズの適用').css({
+				background: '',
+				color: ''
+			});
+			$('.edit__sort-discription').css({
+				display: ''
+			});
+			$('.filter-search__close').css({
+				display: ''
+			});
+			$('.filter-search__edit').css({
+				marginRight: ''
+			});
+			$('.edit__btn_display').show();
+		}
+	});
+	//initialize-mode
+	$('#initialize').change(function () {
+		//↓編集押したときのコメント付きの表示とアイテム無効の表示
+		if ($('#initialize').prop('checked')) {
+			$('.edit__btn_run').css({
+				display: 'inline-block'
+			});
+			$('.edit__btn_display').html('キャンセル').css({
+				background: '#777',
+				color: '#FFF'
+			});
+			$('.edit__display-discription').css({
+				display: 'block'
+			});
+			$('.filter-search__close').css({
+				display: 'none'
+			});
+			$('.filter-search__edit').css({
+				marginRight: '-8px'
+			});
+			$('.edit__btn_sort').hide();
+		} else {
+			$('.edit__btn_run').css({
+				display: ''
+			});
+			$('.edit__btn_display').html('カスタマイズの初期化').css({
+				background: '',
+				color: ''
+			});
+			$('.edit__display-discription').css({
+				display: ''
+			});
+			$('.filter-search__close').css({
+				display: ''
+			});
+			$('.filter-search__edit').css({
+				marginRight: ''
+			});
+			$('.edit__btn_sort').show();
+		}
+	});
+	//sort-mode
 	$('#sort').change(function () {
 		//↓編集押したときのコメント付きの表示とアイテム無効の表示
 		if ($('#sort').prop('checked')) {
 			$('.list__link').css('pointer-events', 'auto');
-			$('.edit__btn_run').css({display: 'inline-block'});
+			$('.edit__btn_run').css({
+				display: 'inline-block'
+			});
 			$('.edit__btn_sort').html('キャンセル').css({
 				background: '#777',
 				color: '#FFF'
@@ -513,20 +589,28 @@ $(function () {
 				axis: "y",
 				revert: true,
 			});
-			$('.edit__sort-discription').css({display: 'block'});
-			$('.filter-search__close').css({display: 'none'});
-			$('.filter-search__edit').css({marginRight: '-8px'});
+			$('.edit__sort-discription').css({
+				display: 'block'
+			});
+			$('.filter-search__close').css({
+				display: 'none'
+			});
+			$('.filter-search__edit').css({
+				marginRight: '-8px'
+			});
 			$('.edit__btn_display').hide();
-			$('.list-toggle').css({display: 'none'});
+			$('.list-toggle').css({
+				display: 'none'
+			});
 			$('head').append('<style>.displaying::after { right: 56px; } </style>');
 		} else {
 			$('.edit__btn_run').css({
 				display: ''
 			});
 			$('.edit__btn_sort').html('並び替え').css({
-					background: '',
-					color: ''
-				});
+				background: '',
+				color: ''
+			});
 			$('.filter-search__list .list-move').toggleClass('list-move_show');
 			$('.list__link').css({
 				pointerEvents: '',
@@ -535,10 +619,16 @@ $(function () {
 			$('#sortFilterList').sortable({
 				disabled: true,
 			});
-			$('#sortFilterList').sortable( "option", "revert", false );
-			$('.edit__sort-discription').css({display: ''});
-			$('.filter-search__close').css({display: ''});
-			$('.filter-search__edit').css({marginRight: ''});
+			$('#sortFilterList').sortable("option", "revert", false);
+			$('.edit__sort-discription').css({
+				display: ''
+			});
+			$('.filter-search__close').css({
+				display: ''
+			});
+			$('.filter-search__edit').css({
+				marginRight: ''
+			});
 			$('.edit__btn_display').show();
 			$('head').find('style').remove();
 		}
@@ -558,23 +648,31 @@ $(function () {
 				pointerEvents: 'none',
 				paddingRight: '48px'
 			});
-			$('.filter-search__close').css({display: 'none'});
+			$('.filter-search__close').css({
+				display: 'none'
+			});
 			$('.list-toggle').css({
 				right: '16px'
 			});
-			$('.edit__display-discription').css({display: 'block'});
-			$('.filter-search__edit').css({marginRight: '-8px'});
+			$('.edit__display-discription').css({
+				display: 'block'
+			});
+			$('.filter-search__edit').css({
+				marginRight: '-8px'
+			});
 			$('.edit__btn_sort').hide();
-			$('.list-toggle').css({display: 'block'});
+			$('.list-toggle').css({
+				display: 'block'
+			});
 			$('head').append('<style>.displaying::after { opacity: 0; } </style>');
 		} else {
 			$('.edit__btn_run').css({
 				display: ''
 			});
 			$('.edit__btn_display').html('有効化の編集').css({
-					background: '',
-					color: ''
-				});
+				background: '',
+				color: ''
+			});
 			$('.list__link').css({
 				pointerEvents: '',
 				paddingRight: ''
@@ -582,12 +680,20 @@ $(function () {
 			$('.list-toggle').css({
 				right: ''
 			});
-			$('.edit__display-discription').css({display: ''});
-			$('.filter-search__close').css({display: ''});
-			$('.filter-search__edit').css({marginRight: ''});
+			$('.edit__display-discription').css({
+				display: ''
+			});
+			$('.filter-search__close').css({
+				display: ''
+			});
+			$('.filter-search__edit').css({
+				marginRight: ''
+			});
 			$('.edit__btn_sort').show();
 			$('head').find('style').remove();
 		}
+
+
 	});
 	//display mode
 	$('.list_sort .list__item').each(function () {
@@ -595,7 +701,7 @@ $(function () {
 		if (displayToggle.prop('checked')) {
 			$(this).toggleClass('displaying');
 		}
-		
+
 	});
 	$('.list_sort .list__item').change(function () {
 		var displayToggle = $(this).find('.toggle__switch');
@@ -605,7 +711,7 @@ $(function () {
 			$(this).removeClass('displaying');
 		}
 	});
-	
+
 	$('.edit__btn_run').click(function () {
 		_showAlert('実行しました');
 		setTimeout(function () {
@@ -624,4 +730,95 @@ $(window).on('load resize', function () {
 	} else {
 		$('.viewer__inner').css('height', '100%');
 	}
+});
+
+$(function () {
+	var ct = 0;
+	$('.parent').each(function () {
+		var original = $('#block\\[' + ct + '\\]');
+		original.find('.add').hide();
+
+		if (ct == 0) {
+			original.find('.remove').hide();
+		}
+		if (ct > 0) {
+			original.find('.remove').show();
+		}
+		ct++;
+		var lastBlock = $('.parent:last');
+		lastBlock.find('.add').show();
+	});
+
+	$('.add').click(function () {
+
+		var parent = $(this).parent('');
+		var original = $('#block\\[' + ct + '\\]');
+		$('.parent').find('.add').hide();
+
+		if (ct > 0) {
+			original.find('.remove').show();
+		}
+		if (ct < 1) {
+			ct++;
+		}
+		if (ct == 0) {
+			ct++;
+		}
+
+		parent.clone(true)
+			.insertAfter(parent)
+			.attr('id', 'block[' + ct + ']')
+			.find('.add, .remove').show()
+			.end()
+			.find('div, input, button').each(function (idx, obj) {
+				if ($(obj).attr('id')) {
+					$(obj).attr({
+						id: $(obj).attr('id').replace(/\[[0-9]\]+$/, '[' + ct + ']')
+					});
+				}
+				if ($(obj).attr('name')) {
+					$(obj).attr({
+						name: $(obj).attr('name').replace(/\[[0-9]\]+$/, '[' + ct + ']')
+					});
+				}
+				if ($(obj).attr('type') == 'text') {
+					$(obj).val('');
+				}
+				if ($(obj).attr('type') == 'checkbox') {
+					$(obj).prop('checked', false);
+				}
+			});
+		ct++;
+	});
+
+	$('.remove').click(function () {
+
+		var removeObj = $(this).parent();
+		removeObj.fadeOut('fast', function () {
+
+			removeObj.remove();
+			ct = 0;
+
+			$("[id^='block']").each(function (index, formObj) {
+				if ($(formObj).attr('id') != 'block[0]') {
+					ct++;
+					$(formObj).attr('id', 'block[' + ct + ']')
+						.find('div, input, button').each(function (idx, obj) {
+							if ($(obj).attr('id')) {
+								$(obj).attr({
+									id: $(obj).attr('id').replace(/\[[0-9]\]+$/, '[' + ct + ']')
+								});
+							}
+							if ($(obj).attr('name')) {
+								$(obj).attr({
+									name: $(obj).attr('name').replace(/\[[0-9]\]+$/, '[' + ct + ']')
+								});
+							}
+						});
+				}
+			});
+			var lastBlock = $('#block\\[' + ct + '\\]');
+			lastBlock.find('.add').show();
+		});
+	});
 });

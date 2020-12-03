@@ -644,7 +644,7 @@ _:-ms-lang(x)::-ms-backdrop, .hero__img {
 	right: 0;
 	z-index: -1;
 	border-radius: 1em;
-	box-shadow: -9px -9px 16px rgb(255, 255, 255);
+	box-shadow: -6px -6px 16px rgb(255, 255, 255);
 }
 
 .section:nth-of-type(even) .section__card::before {

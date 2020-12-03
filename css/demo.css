@@ -2174,6 +2174,12 @@ select.form__input[disabled] {
 	margin: 0 -24px;
 }
 
+.filter-search__list dt,
+.filter-search__list dd {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
 .filter-search__list {
 	margin-top: 8px;
 	padding-top: 8px;
@@ -2548,9 +2554,9 @@ content-fluid
 
 .content-fluid__row {
 	float: left;
-    width: 50%;
-    margin: 0 0 8px;
-    padding: 0 8px;
+	width: 50%;
+	margin: 0 0 8px;
+	padding: 0 8px;
 }
 
 .content-fluid__header {
@@ -2559,6 +2565,13 @@ content-fluid
 	padding: 14px 24px;
 	color: #FFF;
 	line-height: 1;
+}
+
+.content-fluid__view {
+	width: 100%;
+	height: calc(100vh - 240px);
+	overflow: scroll;
+	border: 1px solid #E6E6E6;
 }
 
 .content-fluid__column_auto hr {
@@ -3261,6 +3274,8 @@ content-fluid
 .keyword {
 	position: relative;
 	margin: 0 -4px;
+	font-size: 0;
+	letter-spacing: normal;
 }
 
 .keyword__add {
@@ -3819,7 +3834,9 @@ content-fluid
 	edit
 ******************/
 #display,
-#sort {
+#sort,
+#apply,
+#initialize{
 	display: none;
 }
 
@@ -4065,6 +4082,10 @@ content-fluid
 
 .modal__ask-btn:last-of-type {
 	margin-right: 0;
+}
+
+.modal__ask-btn .primary-btn {
+	margin: 0 auto;
 }
 
 .modal__ok-btn {
@@ -4599,6 +4620,7 @@ th.sales-table__head-premium {
 	#filterToggle:checked ~ .main-content .filter-search_side {
 		-webkit-transform: translateX(0);
 			  transform: translateX(0);
+		z-index: 10;
 	}
 
 	
