@@ -43,8 +43,11 @@ $.fn.uploadFiles = function (option) {
 		$parent.find('.upload__img').hide();
 		$parent.find('.upload__txt').hide();
 		$parent.removeClass('video');
-		$parent.find('.clear-button').fadeIn();
 		$.fn.uploadFiles.run.call(this, option);
+		$(this).parents('.media-list__item, .sns-media__item').find('.checkbox__input').prop('checked', false);
+		if ($(this).parents('.grade__img, .media-list__item').find('.media-list__delete').length == 0) {
+			$parent.find('.clear-button').fadeIn();
+		}
 	});
 	
 	return this;
@@ -172,7 +175,7 @@ $(function() {
 			$(this).parents('.media-list__item').toggleClass('close');
 	});
 	
-	$('.media-list__checkbox .checkbox__input').change(function () {
+	$('.grade__img .checkbox__input').change(function () {
 			$(this).parents('.grade__img').toggleClass('close');
 	});
 	
@@ -197,7 +200,37 @@ $(function() {
 		$mediaField.find('.upload__txt, .upload__img').show();
 		$mediaField.find('.upload__video').empty();
 		$(this).css('display', '');
-		
 	});
+});
+
+$(function () {
+	var returnImg = $('.sns-media__delete .checkbox__input');
+	//
+	var uploadImg = $('.sns-media__item').find('.uploaded');
+	if (uploadImg.length) {
+		uploadImg.prev('.upload__img').hide();
+		
+	}
 	
+	returnImg.change(function () {
+	// remove images
+		var _prop = $(this).prop('checked');
+		var _defaultImg = $(this).parents('.sns-media__item').find('.upload__img');
+		var _uploadImg = $(this).parents('.sns-media__item').find('.uploaded');
+		
+		function viewChange() {
+			_defaultImg.show();
+			_uploadImg.hide();
+		}
+		
+		if (_prop) {
+			viewChange();
+		} else {
+			if (returnImg.length) {
+				_defaultImg.hide();
+				_uploadImg.show();
+			}
+			return false;
+		}
+	});
 });

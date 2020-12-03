@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="../css/font.css">
+<link rel="stylesheet" href="../css/demo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js"></script>
+<script src="js/touch-punch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+<script src="../js/demo.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+	<!--共通パーツを読み込む際に使用:今回は読み込まずに埋め込み表示↓<script>include();</script>-->
+	<input id="navToggle" type="checkbox">
+	<label class="nav-toggle_close" for="navToggle"></label>
+	<header class="header">
+		<h1 class="top-logo">admin</h1>
+		<label for="navToggle" class="nav-toggle icon_menu"></label>
+		<div class="channel header__channel">
+			<img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title ellipsis">サービス名が入ります</span> <span class="channel__id">ID：2138421839</span>
+		</div>
+		<!--サービスリスト-->
+		<div id="channelPopup" class="popup">
+			<div class="popup__container channel-popup">
+				<div class="popup__header">
+					<a href="../fanclub/create-fanclub.html" class="popup__header-link add-btn__txt">サービスを追加</a>
+				</div>
+				<div class="popup-box">
+					<div class="popup-box__row">
+						<div class="popup-box__header">
+							クライアント
+						</div>
+						<div class="popup-box__container">
+							<!--選択中：checkedを付与してください-->
+							<label class="popup-box__entity">
+								<input type="radio" name="channel" id="channel1" class="popup-box__input" checked>
+								すべて</label>
+							<label class="popup-box__entity">
+								<input type="radio" name="channel" id="channel2" class="popup-box__input">
+								クライアント1</label>
+						</div>
+					</div>
+					<div class="popup-box__row">
+						<div class="popup-box__header">
+							サービス
+						</div>
+						<!--選択中のサービス：.popup-boxl-active を付与してください-->
+						<div name="channel1" class="popup-box__container channel-popup__box">
+							<a href="#" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span>
+							</a>
+							<a href="#" class="channel channel-popup__item popup-box__active">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img">
+								<span class="channel__title">サービス名が入ります</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<a href="#" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<!--閉鎖中のサービスは".close"と[閉鎖]を付与してください--> 
+							<a href="" class="channel channel-popup__item close">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img">
+								<span class="channel__title">サービス2</span><span class="channel__id">ID：<span>21384218395</span></span>
+								<span class="status status_stop">閉鎖</span>
+							</a>
+						</div>
+						<div name="channel2" class="popup-box__container channel-popup__box">
+							<a href="#" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span>
+							</a>
+							<a href="#" class="channel channel-popup__item">
+								<img src="../images/img_content.svg" alt="" class="channel__img">
+								<span class="channel__title">サービス名が入ります1</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<a href="#" class="channel channel-popup__item">
+								<img src="../images/img_color.svg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup__overlay">
+			</div>
+		</div>
+		<!--END サービスリスト-->
+	</header>
+	<nav class="global-nav">
+		<ul class="global-nav__list">
+			<li class="global-nav__item">
+				<input type="checkbox" id="analysis" class="global-nav__input">
+				<label for="analysis" class="global-nav__label global-nav__label_analysis"><span class="global-nav__text">分析</span></label>
+				<ul class="submenu">
+					<li class="submenu__item submenu__item_active">
+						<a href="sale.html" class="submenu__link">売上</a>
+					</li>
+				</ul>
+			</li>
+			<li class="global-nav__item">
+				<input type="checkbox" id="support" class="global-nav__input">
+				<label for="support" class="global-nav__label global-nav__label_support"><span class="global-nav__text">設定</span></label>
+				<ul class="submenu">
+					<li class="submenu__item">
+						<a href="info.html" class="submenu__link">基本情報</a>
+					</li>
+					<li class="submenu__item">
+						<a href="theme.html" class="submenu__link">テーマ</a>
+					</li>
+				</ul>
+			</li>
+			<li class="global-nav__item" id="logout">
+				<span type="button" class="global-nav__label global-nav__label_logout"><span class="global-nav__text">ログアウト</span></span>
+			</li>
+		</ul>
+		<button class="global-nav__ctrl" id="nav-ctrl" aria-label="ナビゲーショバーを展開/折りたたむ"> <span class="global-nav__ctrl-icon">ナビゲーションを切り替える</span> </button>
+	</nav>
+	<!--inclide end-->
+	<input type="checkbox" id="filterToggle">
+	<main class="main-content">
+		<div class="tool-bar">
+			<h2 class="tool-bar__title">売上集計</h2>
+			<label for="filterToggle" class="filterSide-toggle">フィルタを表示</label>
+		</div>
+		<form>
+			<div class="filter-search">
+				<div class="filter-search__field">
+					<div>
+						<span class="filter-search__range">過去30日間</span>
+						<div class="filter-search__date triangle">
+							<span id="summaryFrom"></span> - <span id="summaryTo"></span>
+						</div>
+					</div>
+					<div class="filter-search__input-wrapper disclosure">
+						<select class="filter-search__input">
+							<option value="0">日毎</option>
+							<option value="">月毎</option>
+							<option value="">年毎</option>
+						</select>
+					</div>
+					<div id="filterPopup" class="popup">
+						<div class="popup__container date-range">
+							<div class="popup-box">
+								<div class="popup-box__row date-range__custom">
+									<span class="date-range__label">過去30日間</span>
+									<div class="date-range__calender">
+										<input class="date-range__input" id="from" placeholder="" type="text" value="2020/9/1">
+									</div>
+									<div class="date-range__calender">
+										<input class="date-range__input" id="to" placeholder="" type="text" value="2020/9/28">
+									</div>
+									<div class="popup-box__action">
+										<button class="popup-box__clear" type="reset">キャンセル</button>
+										<button class="popup-box__action-btn" type="submit">適用</button>
+									</div>
+								</div>
+								<div class="popup-box__row date-range__select">
+									<!--該当している項目がある場合はクラス名".date-range__active"を付与-->
+									<button type="submit" class="date-range__option date-range__active">今月</button>
+									<button type="submit" class="date-range__option">先月</button>
+									<button type="submit" class="date-range__option">過去7日間</button>
+									<button type="submit" class="date-range__option">過去28日間</button>
+									<button type="submit" class="date-range__option">過去30日間</button>
+									<button type="submit" class="date-range__option">過去90日間</button>
+								</div>
+							</div>
+						</div>
+						<div class="popup__overlay">
+						</div>
+					</div>
+				</div>
+				<div class="filter-search__btn-wrapper">
+					<button class="filter-search__btn" type="submit">検索</button>
+				</div>
+			</div>
+			<div class="filter-search filter-search_side">
+				<div class="filter-search__title">フィルタ</div>
+				<label for="filterToggle" class="filter-search__close" aria-label="閉じる"></label>
+				<div class="filter-search__field">
+					<div class="filter-search__input-wrapper disclosure">
+						<span class="filter-search__label">クライアント</span>
+						<select class="filter-search__input">
+							<option value="0">すべて</option>
+							<option value="">クライアント1</option>
+							<option value="">クライアント2</option>
+						</select>
+					</div>
+					<div class="filter-search__input-wrapper disclosure">
+						<span class="filter-search__label">サービス</span>
+						<select class="filter-search__input">
+							<option value="0">すべて</option>
+							<option value="">サービス1</option>
+							<option value="">サービス2</option>
+						</select>
+					</div>
+					<div class="filter-search__input-wrapper disclosure">
+						<span class="filter-search__label">プラットフォーム</span>
+						<select class="filter-search__input">
+							<option value="0">すべて</option>
+							<option value="">Web</option>
+							<option value="">iOS</option>
+							<option value="">Android</option>
+						</select>
+					</div>
+					<div class="filter-search__input-wrapper disclosure">
+						<span class="filter-search__label">課金タイプ</span>
+						<!--購入したプラットフォームに紐づいて表示内容が変更されます-->
+						<select class="filter-search__input">
+							<option value="0">すべて</option>
+							<option value="">クレジット</option>
+							<option value="">キャリア</option>
+							<option value="">iOS</option>
+							<option value="">Android</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="content-fluid">
+			<div class="summary">
+				<div class="summary__group">
+					<span class="summary__label">すべて</span> <span class="summary__result">¥651,000</span>
+				</div>
+				<!--増加-->
+				<div class="summary__group">
+					<span class="summary__label">20XX/00/00~20XX/00/00 比</span> <span class="summary__result summary__result_increase">8.8%</span>
+				</div>
+				<!--    減少    
+				<div class="summary__group">
+					<span class="summary__label">20XX/00/00~20XX/00/00 比</span> <span class="summary__result summary__result_decrease">8.8%</span>
+				</div>-->
+			</div>
+			<div class="feed sales">
+				<!--"購入したプラットフォーム"が"すべて"を選択時-->
+				<table class="sales-table">
+					<thead>
+						<tr class="sales-table__head">
+							<th rowspan="2" class="sales-table__head-title">年月日</th>
+							<th rowspan="2" class="sales-table__head-title">合計</th>
+							<th colspan="4" class="sales-table__head-type">Web</th>
+							<th colspan="4" class="sales-table__head-type">iOS</th>
+							<th colspan="4" class="sales-table__head-type">Android</th>
+						</tr>
+						<tr class="sales-table__head"> 
+							<!--web-->
+							<th>合計</th>
+							<th>従量</th>
+							<th>ベーシック月額</th>
+							<th>プレミアム月額</th>
+							<!--iOS-->
+							<th>合計</th>
+							<th>従量</th>
+							<th>ベーシック月額</th>
+							<th>プレミアム月額</th>
+							<!--Android-->
+							<th>合計</th>
+							<th>従量</th>
+							<th>ベーシック月額</th>
+							<th>プレミアム月額</th>
+						</tr>
+					</thead>
+					<tbody class="sales-table__body">
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/1</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/2</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/3</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/4</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/5</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/6</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/7</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/8</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/9</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/10</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/11</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr><tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/12</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/13</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/14</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/15</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/16</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/17</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/18</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/19</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/20</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/21</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/22</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/23</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/24</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/25</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/26</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/27</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/28</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/29</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/30</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+						<tr class="sales-table__group">
+							<th class="sales-table__item sales-table__item_title">2020/12/31</th>
+							<td data-label="合計" class="sales-table__item sales-table__item_last">¥21,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item">¥7,000</td>
+							<td data-label="従量" class="sales-table__item">¥1,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item">¥1,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item">¥5,000</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="sales-table__foot">
+							<th class="sales-table__item sales-table__title_foot">合計</th>
+							<td data-label=" 合計" class="sales-table__item sales-table__item_foot sales-table__item_last">¥651,000</td>
+							<!--web-->
+							<td data-label="合計【web】" class="sales-table__item sales-table__item_foot">¥217,000</td>
+							<td data-label="従量" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item sales-table__item_foot">¥155,000</td>
+							<!--iOS-->
+							<td data-label="合計【iOS】" class="sales-table__item sales-table__item_foot">¥217,000</td>
+							<td data-label="従量" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item sales-table__item_foot">¥155,000</td>
+							<!--Android-->
+							<td data-label="合計【Android】" class="sales-table__item sales-table__item_foot">¥217,000</td>
+							<td data-label="従量" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="プレミアム月額" class="sales-table__item sales-table__item_foot">¥31,000</td>
+							<td data-label="ベーシック月額" class="sales-table__item sales-table__item_foot">¥155,000</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</main>
+	<div id="layer">
+	</div>
+	<div class="modal" id="logoutModal">
+		<div class="modal__inner">
+			<p class="modal__announce">ログアウトします。<br> よろしいですか？</p>
+			<div class="modal__btn-wrapper">
+				<div class="modal__ask-btn">
+					<button type="button" class="cancel primary-btn primary-btn--gray">キャンセル</button>
+				</div>
+				<div class="modal__ask-btn">
+					<a href="../index.html" class="primary-btn">ログアウト</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.min.js"></script> 
+<script>
+flatpickr(".date-range__input", {
+	locale: "ja",
+	enableTime: false,
+	dateFormat: "Y/m/d",
+	disableMobile: "true",
+	inline: true,
+	plugins: [new rangePlugin({ input: "#to"})]//期間用プラグイン
+});
+//modalのsubmitボタンをタップして処理完了後に表示させてください。文言変更が必要な際はmsgを変更してください。
+$(function () {
+	_showAlert('実行しました');
+});
+</script>
+</body>
+</html>

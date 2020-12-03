@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/font.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/demo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+<script src="../js/plugin/jscolor.js"></script>
+<script src="../js/demo.js"></script> 
+<script src="../js/uploadFiles.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+<!--共通パーツを読み込む際に使用:今回は読み込まずに埋め込み表示↓<script>include();</script>-->
+<input id="navToggle" type="checkbox">
+<label class="nav-toggle_close" for="navToggle"></label>
+<header class="header">
+	<h1 class="top-logo">admin</h1>
+	<label for="navToggle" class="nav-toggle icon_menu"></label>
+	<div class="channel header__channel">
+		<img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title ellipsis">サービス名が入ります</span> <span class="channel__id">ID：2138421839</span>
+	</div>
+	<!--サービスリスト-->
+	<div id="channelPopup" class="popup">
+		<div class="popup__container channel-popup">
+			<div class="popup__header">
+				<a href="../fanclub/create-fanclub.html" class="popup__header-link add-btn__txt">サービスを追加</a>
+			</div>
+			<div class="popup-box">
+				<div class="popup-box__row">
+					<div class="popup-box__header">
+						クライアント
+					</div>
+					<div class="popup-box__container">
+						<!--選択中：checkedを付与してください-->
+						<label class="popup-box__entity">
+							<input type="radio" name="channel" id="channel1" class="popup-box__input" checked>
+							すべて</label>
+						<label class="popup-box__entity">
+							<input type="radio" name="channel" id="channel2" class="popup-box__input">
+							クライアント1</label>
+					</div>
+				</div>
+				<div class="popup-box__row">
+					<div class="popup-box__header">
+						サービス
+					</div>
+					<!--選択中のサービス：.popup-boxl-active を付与してください-->
+					<div name="channel1" class="popup-box__container channel-popup__box">
+						<a href="" class="channel channel-popup__item"> <img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span> </a> <a href="" class="channel channel-popup__item popup-box__active"> <img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title">サービス名が入ります</span><span class="channel__id">ID：<span>21384218395</span></span> </a> <a href="" class="channel channel-popup__item"> <img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span> </a> 
+						<!--閉鎖中のサービスは".close"と[閉鎖]を付与してください--> 
+						<a href="" class="channel channel-popup__item close"> <img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title">サービス2</span><span class="channel__id">ID：<span>21384218395</span></span> <span class="status status_stop">閉鎖</span> </a>
+					</div>
+					<div name="channel2" class="popup-box__container channel-popup__box">
+						<a href="" class="channel channel-popup__item"> <img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span> </a> <a href="" class="channel channel-popup__item"> <img src="../images/img_content.svg" alt="" class="channel__img"> <span class="channel__title">サービス名が入ります1</span><span class="channel__id">ID：<span>21384218395</span></span> </a> <a href="" class="channel channel-popup__item"> <img src="../images/img_color.svg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__overlay">
+		</div>
+	</div>
+	<!--END サービスリスト-->
+</header>
+<nav class="global-nav">
+	<ul class="global-nav__list">
+		<li class="global-nav__item">
+			<input type="checkbox" id="analysis" class="global-nav__input">
+			<label for="analysis" class="global-nav__label global-nav__label_analysis"><span class="global-nav__text">分析</span></label>
+			<ul class="submenu">
+				<li class="submenu__item submenu__item_active">
+					<a href="sale.html" class="submenu__link">売上</a>
+				</li>
+			</ul>
+		</li>
+		<li class="global-nav__item">
+			<input type="checkbox" id="support" class="global-nav__input">
+			<label for="support" class="global-nav__label global-nav__label_support"><span class="global-nav__text">設定</span></label>
+			<ul class="submenu">
+				<li class="submenu__item">
+					<a href="info.html" class="submenu__link">基本情報</a>
+				</li>
+				<li class="submenu__item">
+					<a href="theme.html" class="submenu__link">テーマ</a>
+				</li>
+			</ul>
+		</li>
+		<li class="global-nav__item" id="logout">
+			<span type="button" class="global-nav__label global-nav__label_logout"><span class="global-nav__text">ログアウト</span></span>
+		</li>
+	</ul>
+	<button class="global-nav__ctrl" id="nav-ctrl" aria-label="ナビゲーショバーを展開/折りたたむ"> <span class="global-nav__ctrl-icon">ナビゲーションを切り替える</span> </button>
+</nav>
+<!--inclide end-->
+<input type="checkbox" id="filterToggle">
+<main class="main-content">
+	<div class="tool-bar">
+		<h2 class="tool-bar__title">テーマ</h2>
+		<label for="filterToggle" class="filterSide-toggle">カスタマイズを表示</label>
+	</div>
+	<form class="filter-search filter-search_side">
+		<label for="filterToggle" class="filter-search__close" aria-label="閉じる"></label>
+		<input type="checkbox" id="apply" name="apply_mode">
+		<input type="checkbox" id="initialize" name="initialize_mode">
+		<div class="edit filter-search__edit">
+			<!--適用-->
+			<p class="edit__sort-discription">編集したカラーが適用されます</p>
+			<label tooltip="編集したカラーを保存" class="edit__btn edit__btn_sort" for="apply">カスタマイズの適用</label>
+			<!--初期化-->
+			<p class="edit__display-discription">編集したカラー情報は削除され、初期設定のカラーが適用されます</p>
+			<label tooltip="デフォルトのカラーに戻す" class="edit__btn edit__btn_display" for="initialize">カスタマイズの初期化</label>
+			<button type="button" class="edit__btn edit__btn_run">実行</button>
+		</div>
+		<dl class="filter-search__list filter-search__list_dl">
+			<dt class="form__label">Primary<span class="form__label-description">主要なパーツ</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Primary" class="input-default jscolor {hash:true}" value="#98766C">
+			</dd>
+			<dt class="form__label">Accent<span class="form__label-description">日付、その他のテキスト</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Accent" class="input-default jscolor {hash:true}" value="#9F8773">
+			</dd>
+			<dt class="form__label">Text<span class="form__label-description">テキスト【デフォルト】</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Text" class="input-default jscolor {hash:true}" value="#343434">
+			</dd>
+			<dt class="form__label">Sub Text<span class="form__label-description">補足のテキスト</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="SubText" class="input-default jscolor {hash:true}" value="#777777">
+			</dd>
+			<dt class="form__label">Border<span class="form__label-description">コンテンツの線</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Border" class="input-default jscolor {hash:true}">
+			</dd>
+			<dt class="form__label">Background<span class="form__label-description">背景</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Background" class="input-default jscolor {hash:true}" value="#F3EDE7">
+			</dd>
+			<dt class="form__label">Gradient<span class="form__label-description">グラデーション</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="GradientStart" class="input-default jscolor {hash:true}" value="#F3EDE7">
+			</dd>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="GradientEnd" class="input-default jscolor {hash:true}" value="#F3EDE7">
+			</dd>
+			<dt class="form__label">Shadow<span class="form__label-description">コンテンツのシャドウ</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="Shadow" class="input-default jscolor {hash:true}" value="#E2DBD4">
+			</dd>
+			<dt class="form__label">Hight Light<span class="form__label-description">コンテンツのハイライト</span></dt>
+			<dd>
+				<input type="text" placeholder="16進数で入力" id="HightLight" class="input-default jscolor {hash:true}">
+			</dd>
+		</dl>
+	</form>
+	<form class="content-fluid">
+		<p class="content-fluid__discription">テーマのテキストの色、背景色をカスタマイズメニューから編集できます<br>カスタマイズメニューで編集した色は、下部のプレビューエリアで確認後、"カスタマイズを適用"ボタンをタップで適用してください</p>
+		<article id="value" class="content-fluid__view">
+			<div class="section__inner">
+				<span data-label="Value" class="section__label">デザイン思考</span>
+				<h2 class="section__titile">伝えたいことを<br><span class="primary-text">補助</span>するデザイン</h2>
+				<p class="section__description">問題解決するアイディアを創出することがデザインの使命であり、<br class="sp-hidden">それを達成するに当たって制作時に心がけていること</p>
+				<div class="section__card">
+					<div class="section__group">
+						<div class="section__keyword primary-text">
+							Vision
+						</div>
+						<div class="section__item">
+							<p class="message">伝わりやすい = 心にささるデザインへ</p>
+							<p class="text">分かりやすくなることで、ユーザーの印象に残るデザインになる</p>
+						</div>
+					</div>
+					<div class="section__group">
+						<p data-keyword="Imagine" class="section__item message">連想しやすくなるように<br><span class="primary-text">『補助』</span>する</p>
+						<figure class="section__figure section__figure_mockup">
+							<img src="../images/img_Imagine.svg" alt="現在地に特化したスポットコンテンツ">
+						</figure>
+						<p class="section__item text">スポット＝「現在地」に特化したルームということが連想しやすいように、画像を”マップアイコン”で切り出すオンラインを示すアイコンは緑or青の共通認識の色を用いる</p>
+					</div>
+					<div class="section__group">
+						<p data-keyword="Optimal" class="section__item message">伝えたいことを<span class="primary-text">『補助』</span>するのであって、<br class="sp-hidden">邪魔してはいけない</p>
+						<figure class="section__figure section__figure_mockup">
+							<img src="../images/img_optimal.svg" alt="サービスの成長に合わせたコンテンツ配置">
+						</figure>
+						<p class="section__item text">伝えたいこと以外を気にされないようにする<br> （認知負荷を下げる）<br>新着はあまりユーザーが集まっていないので、ネガティブになり得る情報は与えない</p>
+					</div>
+				</div>
+			</div>
+		</article>
+	</form>
+</main>
+<div id="layer"></div>
+<div class="modal" id="logoutModal">
+	<div class="modal__inner">
+		<p class="modal__announce">ログアウトします。<br> よろしいですか？</p>
+		<div class="modal__btn-wrapper">
+			<div class="modal__ask-btn">
+				<button type="button" class="cancel primary-btn primary-btn--gray">キャンセル</button>
+			</div>
+			<div class="modal__ask-btn">
+				<a href="../index.html" class="primary-btn">ログアウト</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

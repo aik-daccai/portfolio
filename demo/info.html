@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="../css/font.css">
+<link rel="stylesheet" href="../css/demo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js"></script>
+<script src="js/touch-punch.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script> 
+<script src="../js/demo.js"></script>
+<script src="../js/uploadFiles.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+	<!--共通パーツを読み込む際に使用:今回は読み込まずに埋め込み表示↓<script>include();</script>-->
+	<input id="navToggle" type="checkbox">
+	<label class="nav-toggle_close" for="navToggle"></label>
+	<header class="header">
+		<h1 class="top-logo">admin</h1>
+		<label for="navToggle" class="nav-toggle icon_menu"></label>
+		<div class="channel header__channel">
+			<img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title ellipsis">サービス名が入ります</span> <span class="channel__id">ID：2138421839</span>
+		</div>
+		<!--サービスリスト-->
+		<div id="channelPopup" class="popup">
+			<div class="popup__container channel-popup">
+				<div class="popup__header">
+					<a href="../fanclub/create-fanclub.html" class="popup__header-link add-btn__txt">サービスを追加</a>
+				</div>
+				<div class="popup-box">
+					<div class="popup-box__row">
+						<div class="popup-box__header">
+							クライアント
+						</div>
+						<div class="popup-box__container">
+							<!--選択中：checkedを付与してください-->
+							<label class="popup-box__entity">
+								<input type="radio" name="channel" id="channel1" class="popup-box__input" checked>
+								すべて</label>
+							<label class="popup-box__entity">
+								<input type="radio" name="channel" id="channel2" class="popup-box__input">
+								クライアント1</label>
+						</div>
+					</div>
+					<div class="popup-box__row">
+						<div class="popup-box__header">
+							サービス
+						</div>
+						<!--選択中のサービス：.popup-boxl-active を付与してください-->
+						<div name="channel1" class="popup-box__container channel-popup__box">
+							<a href="" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span>
+							</a>
+							<a href="" class="channel channel-popup__item popup-box__active">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img">
+								<span class="channel__title">サービス名が入ります</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<a href="" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<!--閉鎖中のサービスは".close"と[閉鎖]を付与してください--> 
+							<a href="" class="channel channel-popup__item close">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img">
+								<span class="channel__title">サービス2</span><span class="channel__id">ID：<span>21384218395</span></span>
+								<span class="status status_stop">閉鎖</span>
+							</a>
+						</div>
+						<div name="channel2" class="popup-box__container channel-popup__box">
+							<a href="" class="channel channel-popup__item">
+								<img src="../images/img_demo.jpg" alt="" class="channel__img"><span class="channel__title channel__title_all">すべてのサービス</span>
+							</a>
+							<a href="" class="channel channel-popup__item">
+								<img src="../images/img_content.svg" alt="" class="channel__img">
+								<span class="channel__title">サービス名が入ります1</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+							<a href="" class="channel channel-popup__item">
+								<img src="../images/img_color.svg" alt="" class="channel__img"> <span class="channel__title">サービスA</span><span class="channel__id">ID：<span>21384218395</span></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup__overlay">
+			</div>
+		</div>
+		<!--END サービスリスト-->
+	</header>
+	<nav class="global-nav">
+		<ul class="global-nav__list">
+			<li class="global-nav__item">
+				<input type="checkbox" id="analysis" class="global-nav__input">
+				<label for="analysis" class="global-nav__label global-nav__label_analysis"><span class="global-nav__text">分析</span></label>
+				<ul class="submenu">
+					<li class="submenu__item submenu__item_active">
+						<a href="sale.html" class="submenu__link">売上</a>
+					</li>
+				</ul>
+			</li>
+			<li class="global-nav__item">
+				<input type="checkbox" id="support" class="global-nav__input">
+				<label for="support" class="global-nav__label global-nav__label_support"><span class="global-nav__text">設定</span></label>
+				<ul class="submenu">
+					<li class="submenu__item">
+						<a href="info.html" class="submenu__link">基本情報</a>
+					</li>
+					<li class="submenu__item">
+						<a href="theme.html" class="submenu__link">テーマ</a>
+					</li>
+				</ul>
+			</li>
+			<li class="global-nav__item" id="logout">
+				<span type="button" class="global-nav__label global-nav__label_logout"><span class="global-nav__text">ログアウト</span></span>
+			</li>
+		</ul>
+		<button class="global-nav__ctrl" id="nav-ctrl" aria-label="ナビゲーショバーを展開/折りたたむ"> <span class="global-nav__ctrl-icon">ナビゲーションを切り替える</span> </button>
+	</nav>
+	<!--inclide end-->
+	<input type="checkbox" id="filterToggle">
+	<main class="main-content">
+		<div class="tool-bar">
+			<h2 class="tool-bar__title">基本情報</h2>
+			<label for="filterToggle" class="filterSide-toggle">メニューを表示</label>
+		</div>
+		<form class="filter-search filter-search_side">
+			<label for="filterToggle" class="filter-search__close" aria-label="閉じる"></label>
+			<input type="checkbox" id="sort" name="sort_mode">
+			<input type="checkbox" id="display" name="display_mode">
+			<div class="edit filter-search__edit">
+				<!--並び替え(sort)-->
+				<p class="edit__sort-discription">実行ボタンを押すと、項目の並び替えが適用されます。並び替えた順番でホームに表示されます。</p>
+				<label tooltip="ホームに表示する順番の並び替え" class="edit__btn edit__btn_sort" for="sort">並び替え</label>
+				<!--編集(edit)-->
+				<p class="edit__display-discription">実行ボタンを押すと、項目の有効/無効が適用されます。スウィッチがONの項目がホームに表示されます。</p>
+				<label tooltip="セクションの有効/無効の編集" class="edit__btn edit__btn_display" for="display">有効化の編集</label>
+				<button type="button" class="edit__btn edit__btn_run">実行</button>
+			</div>
+			<div class="filter-search__list">
+				<a href="#" class="filter-search__list-item">メインビジュアル</a> <a href="#" class="filter-search__list-item">注意事項</a>
+				<ul class="list list_sort" id="sortFilterList">
+					<li class="list__item">
+						<a href="#" class="list__link list-move">お知らせ</a>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link list-move">ニュース</a>
+						<label tooltip="" class="list-toggle">
+							<input type="checkbox" class="toggle__switch" checked="">
+							<input type="hidden">
+							<span class="toggle"></span> </label>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link list-move">スケジュール</a>
+						<label class="list-toggle">
+							<input type="checkbox" class="toggle__switch" checked="">
+							<input type="hidden">
+							<span class="toggle"></span> </label>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link list-move">コンタクト</a>
+						<label class="list-toggle">
+							<input type="checkbox" class="toggle__switch">
+							<input type="hidden">
+							<span class="toggle"></span> </label>
+					</li>
+					<li class="list__item">
+						<a href="#" class="list__link list-move">公式SNS</a>
+						<label class="list-toggle">
+							<input type="checkbox" class="toggle__switch" checked="">
+							<input type="hidden">
+							<span class="toggle"></span> </label>
+					</li>
+				</ul>
+				<hr class="filter-search__hr">
+				<a href="#" class="filter-search__list-item">共通設定</a>
+			</div>
+		</form>
+		<form id="info" class="content-fluid">
+			<div class="content-fluid__row-wrapper">
+				<div class="content-fluid__row">
+					<div class="content-fluid__column">
+						<dl class="form__field-wrapper">
+							<dt class="form__label">サービス名</dt>
+							<dd>
+								<input type="text" name="service_name" placeholder="最大文字数50文字" class="input-default">
+							</dd>
+							<dt class="form__label">ドメイン</dt>
+							<dd>
+								<input type="text" name="service_domain" class="input-default">
+							</dd>
+							<dt class="form__label">キーワード<span class="form__label-description">検索キーワードを設定できます</span></dt>
+							<dd class="keyword">
+								<!--常に空のinputを1つ表示させてください-->
+								<div id="block[0]" class="parent keyword__item">
+									<input type="text" class="input-default" placeholder="キーワードを入力" value="テスト">
+									<button type="button" class="add keyword__add">キーワード追加</button>
+									<button type="button" class="remove keyword__remove">削除</button>
+								</div>
+								<div id="block[1]" class="parent keyword__item">
+									<input type="text" class="input-default" placeholder="キーワードを入力">
+									<button type="button" class="add keyword__add" style="">キーワード追加</button>
+									<button type="button" class="remove keyword__remove">削除</button>
+								</div>
+							</dd>
+							
+						</dl>
+					</div>
+				</div>
+				<div class="content-fluid__row">
+					<div class="content-fluid__column">
+						<p class="form__label">
+							共通メディア
+							<span class="form__label-description">すべてのプラットフォームで表示されます</span>
+						</p>
+						<ul class="media-list">
+							<!--default-->
+							<li class="media-list__item">
+								<div class="upload">
+									<!--未登録時：クリアボタンの設置-->
+									<button type="button" class="clear-button upload__btn">画像/動画をクリア</button>
+									<img src="../images/img_noitem.jpg" class="upload__img" alt="">
+									<input type="file" accept="image/*" class="upload__input">
+									<!--未登録時：テキストを追加-->
+									<span class="upload__txt">ファイルをドロップ<br>または<br>クリックで選択</span>
+								</div>
+							</li>
+							<!--edit-->
+							<li class="media-list__item">
+								<div class="upload">
+									<!--登録済：プレビューリンクの設置-->
+									<a href="viewer.html" target="_blank" class="upload__preview"></a>
+									<!--登録済：編集ボタンの設置-->
+									<button type="button" class="upload__edit">画像を編集</button>
+									<img src="../images/img_demo.jpg" class="upload__img" alt="">
+									<input type="file" accept="image/* ,video/*" class="upload__input">
+								</div>
+								<label class="media-list__delete">
+									<input type="checkbox" class="checkbox__input">
+									<span class="checkbox">削除</span>
+								</label>
+							</li>
+							<!--edit-->
+							<li class="media-list__item">
+								<div class="upload video">
+									<!--登録済：プレビューリンクの設置-->
+									<a href="viewer.html" target="_blank" class="upload__preview"></a>
+									<!--登録済：編集ボタンの設置-->
+									<button type="button" class="upload__edit">画像を編集</button>
+									<img src="../images/img_demo.jpg" class="upload__img" alt="">
+									<input type="file" accept="image/* ,video/*" class="upload__input">
+								</div>
+								<label class="media-list__delete">
+									<input type="checkbox" class="checkbox__input">
+									<span class="checkbox">削除</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="form__submit-btn-wrapper">
+				<button type="button" class="primary-btn form__submit-btn" id="save">保存</button>
+			</div>
+			<div class="modal" id="saveModal">
+				<div class="modal__inner">
+					<p class="modal__announce">変更内容を反映します。<br> よろしいですか？</p>
+					<div class="modal__btn-wrapper">
+						<div class="modal__ask-btn">
+							<button type="button" class="cancel primary-btn primary-btn--gray">キャンセル</button>
+						</div>
+						<div class="modal__ask-btn">
+							<button type="button" class="primary-btn">変更する</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal" id="errorModal">
+				<div class="modal__inner">
+					<p class="modal__announce">入力内容に不備があります。</p>
+					<p class="modal__announce_sub-txt">お手数ですが、下記の内容をもう一度ご確認ください。</p>
+					<div class="modal__btn-wrapper">
+						<button type="button" class="primary-btn modal__ok-btn">OK</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</main>
+	<div id="layer">
+	</div>
+	<div class="modal" id="logoutModal">
+		<div class="modal__inner">
+			<p class="modal__announce">ログアウトします。<br> よろしいですか？</p>
+			<div class="modal__btn-wrapper">
+				<div class="modal__ask-btn">
+					<button type="button" class="cancel primary-btn primary-btn--gray">キャンセル</button>
+				</div>
+				<div class="modal__ask-btn">
+					<a href="../index.html" class="primary-btn">ログアウト</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.min.js"></script> 
+<script>
+flatpickr(".date-range__input", {
+	locale: "ja",
+	enableTime: false,
+	dateFormat: "Y/m/d",
+	disableMobile: "true",
+	inline: true,
+	plugins: [new rangePlugin({ input: "#to"})]//期間用プラグイン
+});
+</script>
+</body>
+</html>
