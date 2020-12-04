@@ -156,17 +156,17 @@
 									</div>
 									<div class="popup-box__action">
 										<button class="popup-box__clear" type="reset">キャンセル</button>
-										<button class="popup-box__action-btn" type="submit">適用</button>
+										<button class="popup-box__action-btn" type="button">適用</button>
 									</div>
 								</div>
 								<div class="popup-box__row date-range__select">
 									<!--該当している項目がある場合はクラス名".date-range__active"を付与-->
-									<button type="submit" class="date-range__option date-range__active">今月</button>
-									<button type="submit" class="date-range__option">先月</button>
-									<button type="submit" class="date-range__option">過去7日間</button>
-									<button type="submit" class="date-range__option">過去28日間</button>
-									<button type="submit" class="date-range__option">過去30日間</button>
-									<button type="submit" class="date-range__option">過去90日間</button>
+									<button type="button" class="date-range__option date-range__active">今月</button>
+									<button type="button" class="date-range__option">先月</button>
+									<button type="button" class="date-range__option">過去7日間</button>
+									<button type="button" class="date-range__option">過去28日間</button>
+									<button type="button" class="date-range__option">過去30日間</button>
+									<button type="button" class="date-range__option">過去90日間</button>
 								</div>
 							</div>
 						</div>
@@ -175,7 +175,7 @@
 					</div>
 				</div>
 				<div class="filter-search__btn-wrapper">
-					<button class="filter-search__btn" type="submit">検索</button>
+					<button class="filter-search__btn" type="button">検索</button>
 				</div>
 			</div>
 			<div class="filter-search filter-search_side">
@@ -906,10 +906,6 @@ flatpickr(".date-range__input", {
 	disableMobile: "true",
 	inline: true,
 	plugins: [new rangePlugin({ input: "#to"})]//期間用プラグイン
-});
-//modalのsubmitボタンをタップして処理完了後に表示させてください。文言変更が必要な際はmsgを変更してください。
-$(function () {
-	_showAlert('実行しました');
 });
 </script>
 </body>
