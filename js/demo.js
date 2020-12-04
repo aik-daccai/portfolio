@@ -712,7 +712,7 @@ $(function () {
 		}
 	});
 
-	$('.edit__btn_run').click(function () {
+	$('.edit__btn_run, .filter-search__btn, .popup-box__action-btn, .date-range__option').click(function () {
 		_showAlert('実行しました');
 		setTimeout(function () {
 			location.reload();
