@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="607.831" height="1039.649" viewBox="0 0 607.831 1039.649">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9ca79e"/>
+      <stop offset="1" stop-color="#bec3ab"/>
+    </linearGradient>
+    <filter id="body" x="0" y="0" width="607.831" height="1039.649" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <path id="前面オブジェクトで型抜き_1" data-name="前面オブジェクトで型抜き 1" d="M339.171,809.582H35.106a34.9,34.9,0,0,1-11.968-2.1,35.493,35.493,0,0,1-10.282-5.851A34.94,34.94,0,0,1,.912,782.464,35.36,35.36,0,0,1,0,774.476V35.105a34.8,34.8,0,0,1,2.574-13.2A35.541,35.541,0,0,1,9.685,10.894a34.511,34.511,0,0,1,5.208-4.512A34.919,34.919,0,0,1,27.772.766,35.433,35.433,0,0,1,35.106,0H76.724c.365.01,3.6.169,4.871,2.6a14.854,14.854,0,0,1,.919,4.586v0a51.4,51.4,0,0,0,.845,5.535,24.829,24.829,0,0,0,2.248,6.276,18.231,18.231,0,0,0,3.032,4.162,20.43,20.43,0,0,0,4.351,3.41,22.391,22.391,0,0,0,5.532,2.305,25.307,25.307,0,0,0,6.576.847h166.24a25.307,25.307,0,0,0,6.577-.847,22.4,22.4,0,0,0,5.532-2.305,20.43,20.43,0,0,0,4.351-3.41,18.23,18.23,0,0,0,3.033-4.162,24.823,24.823,0,0,0,2.247-6.276,51.444,51.444,0,0,0,.845-5.539,14.855,14.855,0,0,1,.919-4.586C296.114.171,299.349.01,299.713,0h39.458A34.878,34.878,0,0,1,351.7,2.309a35.413,35.413,0,0,1,10.61,6.4,34.923,34.923,0,0,1,11.12,18.71,35.387,35.387,0,0,1,.843,7.689V774.476a34.789,34.789,0,0,1-2.921,14.027,35.293,35.293,0,0,1-3.433,6.1,35.979,35.979,0,0,1-4.555,5.3,34.914,34.914,0,0,1-24.2,9.671Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="1" y1="1" x2="0" y2="0" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-path-2">
+      <rect width="343.003" height="15.997" fill="none"/>
+    </clipPath>
+    <filter id="長方形_6579" x="132.993" y="359.582" width="343" height="343" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur-2"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <rect id="長方形_6600" data-name="長方形 6600" width="295" height="295" rx="16" transform="translate(20 167)" fill="#e1e1e6"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect width="295" height="295" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="white-mockup" transform="translate(-126.007 -129)">
+    <g id="phone" transform="translate(216.007 219)">
+      <g transform="matrix(1, 0, 0, 1, -90, -90)" filter="url(#body)">
+        <path id="body-2" data-name="body" d="M63.825-125.351A59.836,59.836,0,0,1,3.989-185.186V-667.867A3.989,3.989,0,0,1,0-671.857v-53.853A3.989,3.989,0,0,1,3.989-729.7v-15.957A3.989,3.989,0,0,1,0-749.643V-803.5a3.989,3.989,0,0,1,3.989-3.99V-837.4A3.989,3.989,0,0,1,0-841.392v-23.935a3.989,3.989,0,0,1,3.989-3.99v-55.847A59.836,59.836,0,0,1,63.825-985h300.18a59.835,59.835,0,0,1,59.836,59.836v138.622a3.989,3.989,0,0,1,3.99,3.989V-692.8a3.989,3.989,0,0,1-3.99,3.99v503.623a59.835,59.835,0,0,1-59.836,59.836Z" transform="translate(90 1075)" fill="#fff"/>
+      </g>
+      <path id="camera" d="M113.818-960.017A5.983,5.983,0,0,1,119.8-966a5.983,5.983,0,0,1,5.984,5.983,5.984,5.984,0,0,1-5.984,5.984A5.983,5.983,0,0,1,113.818-960.017Zm-63.825,2.992A2.993,2.993,0,0,1,47-960.017a2.992,2.992,0,0,1,2.992-2.992H96.864a2.991,2.991,0,0,1,2.992,2.992,2.992,2.992,0,0,1-2.992,2.992Z" transform="translate(140.487 993.923)" fill="#eeeef2"/>
+    </g>
+    <g id="マスクグループ_47" data-name="マスクグループ 47" transform="translate(242.933 244.136)" clip-path="url(#clip-path)">
+      <g id="グループ_8400" data-name="グループ 8400" transform="translate(0.263 -6.582)">
+        <g id="スクラッチ" transform="translate(-1976.196 -355.972)">
+          <rect id="背景" width="375" height="820" transform="translate(1976 357)" fill="url(#linear-gradient-2)"/>
+          <g id="スクラッチ-2" data-name="スクラッチ" transform="translate(0 -4)">
+            <path id="カード" d="M4,0H339a4,4,0,0,1,4,4V503a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(1992 508)" fill="#fff"/>
+            <text id="スクラッチタイトル" transform="translate(2016 556)" fill="#343434" font-size="24" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="39.86" y="21">スクラッチタイトル</tspan></text>
+            <text id="指でなぞって削ってみよう_" data-name="指でなぞって削ってみよう！" transform="translate(2164 961)" fill="#343434" font-size="13" font-family="HiraginoSans-W3, Hiragino Sans"><tspan x="-84.11" y="0">指でなぞって削ってみよう！</tspan></text>
+            <text id="期間_20XX.00.00_23:59まで" data-name="期間：20XX.00.00 23:59まで" transform="translate(2157 604)" fill="#777" font-size="14" font-family="HiraginoSans-W3, Hiragino Sans"><tspan x="-91.42" y="0">期間：</tspan><tspan y="0" font-family="SFCompactText-Regular, SF Compact Text">20XX.00.00 23:59</tspan><tspan y="0">まで</tspan></text>
+            <g id="リピートグリッド_8" data-name="リピートグリッド 8" transform="translate(1991.997 1010)" clip-path="url(#clip-path-2)">
+              <g transform="translate(-15.997 -521)">
+                <path id="パス_2132" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(15.003 -521)">
+                <path id="パス_2132-2" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(46.003 -521)">
+                <path id="パス_2132-3" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(77.003 -521)">
+                <path id="パス_2132-4" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(108.003 -521)">
+                <path id="パス_2132-5" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(139.003 -521)">
+                <path id="パス_2132-6" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(170.003 -521)">
+                <path id="パス_2132-7" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(201.003 -521)">
+                <path id="パス_2132-8" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(232.003 -521)">
+                <path id="パス_2132-9" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(263.003 -521)">
+                <path id="パス_2132-10" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(294.003 -521)">
+                <path id="パス_2132-11" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+              <g transform="translate(325.003 -521)">
+                <path id="パス_2132-12" data-name="パス 2132" d="M3702-3701.4l0-15.993,32.058.025L3733-3701.4s-1.454-10.967-11.367-11-11.237,11-11.246,11C3710.4-3701.387,3702-3701.4,3702-3701.4Z" transform="translate(-3686 4238.389)" fill="#fff"/>
+              </g>
+            </g>
+            <g id="スクラッチ-3" data-name="スクラッチ" transform="translate(1996 464)">
+              <g transform="matrix(1, 0, 0, 1, -136.99, -212.58)" filter="url(#長方形_6579)">
+                <rect id="長方形_6579-2" data-name="長方形 6579" width="295" height="295" rx="16" transform="translate(156.99 379.58)" fill="#d4d5d9"/>
+              </g>
+              <g id="マスクグループ_28" data-name="マスクグループ 28" clip-path="url(#clip-path-3)">
+                <g id="リピートグリッド_1" data-name="リピートグリッド 1" transform="translate(20 167)" clip-path="url(#clip-path-4)">
+                  <g id="グループ_8227" data-name="グループ 8227" transform="translate(-27.848 -188.179)">
+                    <text id="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-2" data-name="グループ 8227" transform="translate(137.152 -188.179)">
+                    <text id="SCRATCH-2" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-2" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-3" data-name="グループ 8227" transform="translate(-27.848 -119.179)">
+                    <text id="SCRATCH-3" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-3" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-4" data-name="グループ 8227" transform="translate(137.152 -119.179)">
+                    <text id="SCRATCH-4" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-4" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-5" data-name="グループ 8227" transform="translate(-27.848 -50.179)">
+                    <text id="SCRATCH-5" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-5" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-6" data-name="グループ 8227" transform="translate(137.152 -50.179)">
+                    <text id="SCRATCH-6" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-6" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-7" data-name="グループ 8227" transform="translate(-27.848 18.821)">
+                    <text id="SCRATCH-7" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-7" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-8" data-name="グループ 8227" transform="translate(137.152 18.821)">
+                    <text id="SCRATCH-8" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-8" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-9" data-name="グループ 8227" transform="translate(-27.848 87.821)">
+                    <text id="SCRATCH-9" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-9" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                  <g id="グループ_8227-10" data-name="グループ 8227" transform="translate(137.152 87.821)">
+                    <text id="SCRATCH-10" data-name="SCRATCH" transform="translate(32.44 240.899) rotate(-8)" fill="#bababe" font-size="32" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">SCRATCH</tspan></text>
+                    <text id="FANMILY-10" data-name="FANMILY" transform="translate(132.696 238.958) rotate(-8)" fill="#fefffe" font-size="10" font-family="Futura-Medium, Futura" font-weight="500"><tspan x="0" y="0">FANMILY</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g id="スキップ" transform="translate(1937 303)">
+            <g id="パス_2119" data-name="パス 2119" transform="translate(298 736)" fill="none">
+              <path d="M13.333,0H86.667C94.03,0,100,6.716,100,15S94.03,30,86.667,30H13.333C5.97,30,0,23.284,0,15S5.97,0,13.333,0Z" stroke="none"/>
+              <path d="M 13.33332061767578 1 C 6.532707214355469 1 1 7.280372619628906 1 15 C 1 22.71962738037109 6.532707214355469 29 13.33332061767578 29 L 86.66666412353516 29 C 93.46729278564453 29 99 22.71962738037109 99 15 C 99 7.280372619628906 93.46729278564453 1 86.66666412353516 1 L 13.33332061767578 1 M 13.33332061767578 0 L 86.66666412353516 0 C 94.03046417236328 0 100 6.715719223022461 100 15 C 100 23.28426742553711 94.03046417236328 30 86.66666412353516 30 L 13.33332061767578 30 C 5.969535827636719 30 0 23.28426742553711 0 15 C 0 6.715719223022461 5.969535827636719 0 13.33332061767578 0 Z" stroke="none" fill="#fff"/>
+            </g>
+            <text id="スキップ-2" data-name="スキップ" transform="translate(348 756)" fill="#fff" font-size="14" font-family="HiraginoSans-W6, Hiragino Sans"><tspan x="-27.79" y="0">スキップ</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -733,6 +733,37 @@ _:-ms-lang(x)::-ms-backdrop, .hero__img {
 	width: 70%;
 }
 
+.section__item.view {
+	position: relative;
+	z-index: -1;
+	width: 100%;
+	height: 300px;
+	margin: -64px 0 0;
+	overflow: hidden;
+	background: #F7F7F5;
+}
+/*
+.section__view::before {
+	content: "";
+	position: absolute;
+	background: #F7F7F5;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+	width: auto;
+	margin-left: calc(((100vw - 100%) / 2) * -1);
+	margin-right: calc(((100vw - 100%) / 2) * -1);
+}*/
+
+.view img {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
 /********box*******/
 .box {
 	position: relative;
@@ -1253,8 +1284,13 @@ _:-ms-lang(x)::-ms-backdrop, .mockup__img {
 		margin-top: 8px;
 	}
 	
-	.section__item.work {
+	.section__figure + .section__item.work {
 		margin-top: 0;
+	}
+	
+	.section__item.view {
+		margin: 16px 0 0;
+		height: 200px;
 	}
 	
 	.message[data-keyword="アイコン"],
